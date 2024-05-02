@@ -4,4 +4,7 @@ Guillermo Murillo / Tech Leader
 
 Dominique Del Valle / Frontend Dev
 
-Daniel Machado / Frontend Developer
+Daniel Machado / Frontend Dev
+
+Santino Azarola / Frontend Dev
+
