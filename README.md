@@ -8,3 +8,5 @@ Daniel Machado / Frontend Dev
 
 Santino Azarola / Frontend Dev
 
+Oscar Lozano / Frontend Dev
+
