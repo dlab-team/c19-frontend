@@ -8,3 +8,4 @@ Daniel Machado / Frontend Dev
 
 Santino Azarola / Frontend Dev
 
+Claudia Romero / Frontend Dev
