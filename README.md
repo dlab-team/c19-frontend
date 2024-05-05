@@ -11,3 +11,5 @@ Santino Azarola / Frontend Dev
 Ignacio Franco Villca / Frontend Dev
 
 Durian Rodriguez / Frontend Dev
+
+Temilo Pereira / Frontend Dev
