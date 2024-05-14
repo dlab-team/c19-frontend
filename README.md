@@ -19,3 +19,5 @@ Durian Rodriguez / Frontend Dev
 Temilo Pereira / Frontend Dev
 
 Patricio Barahona / Frontend Dev
+
+Ricardo Andrade / Frontend Dev
