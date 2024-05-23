@@ -1,4 +1,5 @@
-
+import { Comments } from "@/components/index";
+import Image from "next/image";
 import React from "react";
 
 import Button from "react-bootstrap/Button";
@@ -6,17 +7,31 @@ import Container from "react-bootstrap/Container";
 
 export default function Home() {
   return (
-
-      <Container className=" p-5 d-flex  flex-column justify-content-center align-items-center ">
-        <h1>Aprende HTML y CSS</h1>
-        <h3>Un curso interactivo para aprender HTML y CSS</h3>
+    <Container>
+      <Container className=" p-3 d-flex  flex-column justify-content-center align-items-center ">
+        <h1 className="m-3 fw-bold">Aprende HTML y CSS</h1>
+        <h5 className="text-secondary">
+          Un curso interactivo para aprender HTML y CSS
+        </h5>
         <div>
-          <Button className="" variant="secondary">
+          <Button className="" variant="dark">
             Empezar
           </Button>
         </div>
+        <Image
+          src="/html_css.png"
+          alt={"HTML + CSS"}
+          width={850}
+          height={500}
+        ></Image>
       </Container>
-
-
+      <Container>
+        <h2>Únete a la comunidad de Discord</h2>
+        <h5 className="text-secondary">
+          Comentarios de Miembros
+        </h5>
+        <Comments />
+      </Container>
+    </Container>
   );
 }
