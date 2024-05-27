@@ -4,8 +4,8 @@ import { CommentCard } from './CommentCard';
 
 export const Comments = () => {
   return (
-    <Container className='mt-5'>
-      <Row>
+    <Container fluid className="mt-5 p-0">
+      <Row className="justify-content-start">
         <Col>
           <CommentCard />
         </Col>
