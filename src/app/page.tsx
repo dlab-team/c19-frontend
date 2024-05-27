@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 
 export default function Home() {
   return (
-    <Container>
+    <Container className="mt-5">
       <Container className=" p-3 d-flex  flex-column justify-content-center align-items-center ">
         <h1 className="m-3 fw-bold">Aprende HTML y CSS</h1>
         <h5 className="text-secondary">
@@ -21,15 +21,15 @@ export default function Home() {
         <Image
           src="/html_css.png"
           alt={"HTML + CSS"}
-          width={850}
+          width={750}
           height={500}
         ></Image>
       </Container>
       <Container>
-        <h2>Únete a la comunidad de Discord</h2>
-        <h5 className="text-secondary">
-          Comentarios de Miembros
-        </h5>
+        <div className="">
+          <h2>Únete a la comunidad de Discord</h2>
+          <h5 className="text-secondary">Comentarios de Miembros</h5>
+        </div>
         <Comments />
       </Container>
     </Container>
