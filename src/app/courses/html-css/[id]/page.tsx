@@ -21,7 +21,7 @@ const HtmlCssPage = ({params}: Props) => {
     <Container className="mt-5 d-flex flex-column gap-5  ">
       <Container className="bg_excercises rounded d-flex justify-content-center align-items-center gap-3">
         <h2 className="py-5 fw-bold fs-1">Ejercicios</h2>
-        <h6 className="bg-light text-dark rounded p-2"> {params.id }/20</h6>{" "}
+        <h6 className="bg-light text-dark rounded p-2"> {params.id}/20</h6>{" "}
         {/* TODO componente que lleve registro del avance */}
       </Container>
       <Container>
@@ -40,21 +40,19 @@ const HtmlCssPage = ({params}: Props) => {
           accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut
         </h4>
       </Container>
-      <Container>
-        <Row>
-          <Col>
-            <h4>Editor</h4>
-            <h6>Escribe tu respuesta dentro del Editor</h6>
-            <div style={{ height: "50vh" }} className="bg-secondary"></div>
-            {/* TODO sustituir por componente editor */}
-          </Col>
-          <Col>
-            <h4>Resultado</h4>
-            <h6>Resultado de la Ejecución - Renderizado</h6>
-            <div className="bg-secondary " style={{ height: "50vh" }}></div>
-            {/* TODO: sustituir por componente resultado */}
-          </Col>
-        </Row>
+      <Container fluid className="d-flex justify-content-between align-items-center gap-5 flex-column flex-md-row">
+        <div className="flex-fill">
+          <h4>Editor</h4>
+          <h6>Escribe tu respuesta dentro del Editor</h6>
+          <div style={{ height: "50vh" }} className="bg-secondary"></div>
+          {/* TODO sustituir por componente editor */}
+        </div>
+        <div className="flex-fill">
+          <h4>Resultado</h4>
+          <h6>Resultado de la Ejecución - Renderizado</h6>
+          <div className="bg-secondary " style={{ height: "50vh" }}></div>
+          {/* TODO: sustituir por componente resultado */}
+        </div>
       </Container>
       <Container className="d-flex justify-content-between px-1">
         <div className="d-flex justify-content-end px-2 ">
