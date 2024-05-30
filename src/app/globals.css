@@ -86,7 +86,6 @@ body {
 }
 
 body {
- 
 }
 
 a {
@@ -94,8 +93,25 @@ a {
   text-decoration: none;
 }
 
-.bg_desafio{
-  background: #38353F;
+.bg_desafio {
+  background: #38353f;
+}
+
+.bg_excercises {
+  background: rgb(240, 101, 41);
+  background: linear-gradient(
+    90deg,
+    rgba(240, 101, 41, 1) 0%,
+    rgba(235, 235, 235, 1) 35%,
+    rgba(41, 101, 241, 1) 100%
+  );
+}
+
+.next_button {
+  color: #000; 
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
