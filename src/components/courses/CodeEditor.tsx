@@ -7,7 +7,7 @@ import "../../app/page.module.css";
 interface FileContent {
   name: string;
   language: string;
-  value: string;
+  value?: string;
 }
 
 interface Files {
@@ -16,8 +16,8 @@ interface Files {
 
 interface Props {
   codeType: "css" | "html" | "html-css";
-  cssCode: string;
-  htmlCode: string;
+  cssCode?: string;
+  htmlCode?: string;
 }
 
 const CodeEditor = ({ codeType, cssCode, htmlCode }: Props) => {

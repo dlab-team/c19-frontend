@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {  Discord } from "@/components";
+import {  Advance, Discord } from "@/components";
 
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function ExcerciseLayout({
   return (
     <>
       {children}
-      <Discord />
+
     </>
   );
 }    
