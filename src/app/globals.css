@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/uni-neue?styles=28643');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
 :root {
@@ -98,86 +99,11 @@ a {
 }
 
 footer{
-  background: #739e2d;
-}
-
-.footer-content{
-  padding: 80px 30px;
-}
-
-.footer-logo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 55px;
-}
-
-.footer-content h3, .footer-content h4{
-  font-family: 'Uni Neue', sans-serif;
-  color: #fff;
-}
-
-.footer-content h3{
-  font-size: 24px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.footer-content h5{
-  font-size: 16px;
-  color: #fff;
-  font-weight: 300;
-}
-
-.footer-content h4{
-  font-size: 18px;
-}
-
-.footer-content span{
-  font-size: 12px;
-  color: #fff;
-}
-
-.footer-content a.mailto{
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 14px;
-  color: #fff;
+  padding: 40px 90px;
 }
 
 .bg_desafio{
   background: #38353F;
-}
-
-.footer-content a:hover{
-  color: #fff;
-  font-weight: bolder;
-}
-
-.footer-content ul li{
-  list-style-type: none;
-}
-
-.footer-content ul{
-  padding: 0;
-}
-
-.footer-content ul li a{
-  color: #fff;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.dropdown-divider {
-  border: 2px solid #fff;
-  margin: 15px 0 !important;
-}
-
-@media(min-width: 1280px) {
-  .container {
-      max-width:1280px;
-      padding: 32px 64px !important;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
