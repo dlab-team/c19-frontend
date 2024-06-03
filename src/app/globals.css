@@ -1,3 +1,7 @@
+@import url('https://fonts.cdnfonts.com/css/uni-neue?styles=28643');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -93,6 +97,10 @@ a {
   text-decoration: none;
 }
 
+footer{
+  padding: 40px 90px;
+}
+
 .bg_desafio {
   background: #38353f;
 }
@@ -138,6 +146,7 @@ a {
   font-weight: bold;
   border: none;
   border-radius: 6px;
+
 }
 
 @media (prefers-color-scheme: dark) {
