@@ -90,7 +90,6 @@ body {
 }
 
 body {
- 
 }
 
 a {
@@ -102,8 +101,52 @@ footer{
   padding: 40px 90px;
 }
 
-.bg_desafio{
-  background: #38353F;
+.bg_desafio {
+  background: #38353f;
+}
+
+.bg_excercises {
+  background: rgb(240, 101, 41);
+  background: linear-gradient(
+    90deg,
+    rgba(240, 101, 41, 1) 0%,
+    rgba(235, 235, 235, 1) 35%,
+    rgba(41, 101, 241, 1) 100%
+  );
+}
+
+.css_button {
+  background-color: #4077f8;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 3px;
+}
+
+.html_button {
+  background-color: #f06529;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 3px;
+}
+
+.button_active {
+  border: solid 2px white;
+
+}
+.editor_top {
+  background-color: black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.next_button {
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+
 }
 
 @media (prefers-color-scheme: dark) {

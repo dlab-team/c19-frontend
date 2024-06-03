@@ -1,11 +1,12 @@
+import StartButton from "@/components/home/StartButton";
 import { Comments } from "@/components/index";
 import Image from "next/image";
 import React from "react";
-
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
+
 export default function Home() {
+  
   return (
     <Container className="mt-5">
       <Container className=" p-3 d-flex  flex-column justify-content-center align-items-center ">
@@ -14,9 +15,7 @@ export default function Home() {
           Un curso interactivo para aprender HTML y CSS
         </h5>
         <div>
-          <Button className="" variant="dark">
-            Empezar
-          </Button>
+          <StartButton />
         </div>
         <Image
           src="/html_css.png"
