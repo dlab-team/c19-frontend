@@ -23,4 +23,28 @@ export const html_css_problems = [
 </body>
 </html>`,
   },
+  {
+    enunciado: "Enunciado 3",
+    cssCode: "/*code css 3*/",
+    htmlCode: `<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <!-- Escribe tu código aquí problema 3-->
+</body>
+</html>`,
+  },
+  {
+    enunciado: "Enunciado 4",
+    cssCode: "/*code css 4*/",
+    htmlCode: `<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <!-- Escribe tu código aquí problema 4-->
+</body>
+</html>`,
+  },
 ];

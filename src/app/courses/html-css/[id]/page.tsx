@@ -2,6 +2,7 @@ import {Container} from "react-bootstrap";
 import type { Metadata } from "next";
 import CodeEditor from "@/components/courses/CodeEditor";
 import { html_css_problems } from "@/problems/html-css/html_css_problems";
+import { Advance } from "@/components";
 
 
 
@@ -61,19 +62,7 @@ const HtmlCssPage = ({ params }: Props) => {
           {/* TODO: sustituir por componente resultado */}
         </div>
       </Container>
-      {/* TODO: llevar el siguiente contenedor a un componente aparte que controle el avance con los botones */}
-      <Container className="d-flex justify-content-between px-1">
-        <div className="d-flex justify-content-end px-2 ">
-          <button className="bg_excercises px-4 py-2 next_button">
-            Anterior
-          </button>
-        </div>
-        <div className="d-flex justify-content-end px-2 ">
-          <button className="bg_excercises px-4 py-2 next_button">
-            Siguiente
-          </button>
-        </div>
-      </Container>
+      <Advance actualStep={Number(params.id)} />
     </Container>
   );
 };
