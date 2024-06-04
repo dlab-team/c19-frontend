@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import type { Metadata } from "next";
+import { Render } from "@/components/common/Render-Exercise";
 
 
 interface Props {
@@ -50,8 +51,8 @@ const HtmlCssPage = ({params}: Props) => {
         <div className="flex-fill">
           <h4>Resultado</h4>
           <h6>Resultado de la Ejecución - Renderizado</h6>
-          <div className="bg-secondary " style={{ height: "50vh" }}></div>
           {/* TODO: sustituir por componente resultado */}
+          <Render contenidohtml="<h1>Hola mundo</h1>" contenidocss="h1{color:red}"/>
         </div>
       </Container>
       <Container className="d-flex justify-content-between px-1">
