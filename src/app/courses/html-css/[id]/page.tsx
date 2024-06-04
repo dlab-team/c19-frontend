@@ -59,7 +59,7 @@ const HtmlCssPage = ({ params }: Props) => {
           <h4>Resultado</h4>
           <h6>Resultado de la Ejecución - Renderizado</h6>
           {/* TODO: sustituir el contenido de los props por las variables que contiene el codigo del editor*/}
-          <Render contenidohtml="<h1 class='titulo'>Hola mundo</h1>" contenidocss=".titulo{color:blue}"/>
+          <Render contenidohtml="<h1 class='titulo'>Hola mundo</h1>" contenidocss="<style>.titulo{color:blue}</style>"/>
         </div>
       </Container>
       <Advance actualStep={Number(params.id)} />
