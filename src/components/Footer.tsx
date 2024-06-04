@@ -19,9 +19,9 @@ export const Footer = () => {
         </div>
         <div className="h-50 py-2 d-flex flex-row align-items-end ">
           <Link className="fa fa-facebook-square fs-5 px-2 text-secondary text-decoration-none" href="https://www.facebook.com/DesafioLatam/"></Link>
-          <Link className="fa fa-linkedin-square fs-5 px-2 text-secondary text-decoration-none" href="https://www.facebook.com/DesafioLatam/"></Link>
-          <Link className="fa fa-youtube-play fs-5 px-2 text-secondary text-decoration-none" href="https://www.facebook.com/DesafioLatam/"></Link>
-          <Link className="fa fa-instagram fs-5 px-2 text-secondary text-decoration-none" href="https://www.facebook.com/DesafioLatam/"></Link>
+          <Link className="fa fa-linkedin-square fs-5 px-2 text-secondary text-decoration-none" href="https://www.linkedin.com/school/desafiolatam/"></Link>
+          <Link className="fa fa-youtube-play fs-5 px-2 text-secondary text-decoration-none" href="https://www.youtube.com/channel/UCz0ekVt3TQ65voddo9xVOQw"></Link>
+          <Link className="fa fa-instagram fs-5 px-2 text-secondary text-decoration-none" href="https://www.instagram.com/desafiolatam/"></Link>
         </div>
       </div>
       <div className="container col-lg row">
