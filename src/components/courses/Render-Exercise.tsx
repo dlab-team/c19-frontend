@@ -10,8 +10,8 @@ export const Render = ({contenidohtml, contenidocss}:Props) =>{
     const contenido = contenidohtml+contenidocss
     return(
         <Container>
-        <div style={{height: "60vh", width:"40vw", border:"1px solid black", boxShadow:"3px 3px 5px #444" ,borderRadius:"0 0 5px 5px"}}>
-            <iframe srcDoc={contenido} style={{height: "58vh", width:"39vw",}}></iframe>
+        <div style={{height: "60vh", border:"1px solid black", boxShadow:"3px 3px 5px #444" ,borderRadius:"0 0 5px 5px"}}>
+            <iframe srcDoc={contenido} style={{height: "58vh"}}></iframe>
         </div>
         </Container>
     )
