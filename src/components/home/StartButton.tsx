@@ -9,7 +9,7 @@ const StartButton = () => {
   return (
     <Button
       className=""
-      onClick={() => router.push("/courses/html-css/1")}
+      onClick={() => router.push("/courses")}
       variant="dark"
     >
       Empezar
