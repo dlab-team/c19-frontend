@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import CodeEditor from "@/components/courses/CodeEditor";
 import { html_css_problems } from "@/problems/html-css/html_css_problems";
 import { Advance } from "@/components";
-
+import { Render } from "@/components/courses/Render-Exercise";
 
 
 interface Props {
@@ -58,8 +58,8 @@ const HtmlCssPage = ({ params }: Props) => {
         <div className="flex-fill">
           <h4>Resultado</h4>
           <h6>Resultado de la Ejecución - Renderizado</h6>
-          <div className="bg-secondary " style={{ height: "50vh" }}></div>
-          {/* TODO: sustituir por componente resultado */}
+          {/* TODO: sustituir el contenido de los props por las variables que contiene el codigo del editor*/}
+          <Render contenidoHtml="<h1 class='titulo'>Hola mundo</h1>" contenidoCss=".titulo{color:blue}"/>
         </div>
       </Container>
       <Advance actualStep={Number(params.id)} />
