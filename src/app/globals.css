@@ -89,9 +89,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -148,6 +145,34 @@ footer{
   border-radius: 6px;
 
 }
+
+/*--------------------Estilos Personalizados del footer-----*/
+.social-link:hover {
+  transform: scale(1.2);
+}
+
+.facebook:hover {
+  color: #3b5998 !important;
+}
+
+.linkedin:hover {
+  color: #0e76a8 !important;
+}
+
+.youtube:hover {
+  color: #c4302b !important;
+}
+
+.instagram:hover {
+  background: #833ab4 ;
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  background-clip: text;
+  color: rgba(0, 0, 0, 0.4) !important;
+  
+}
+
+
+
 
 @media (prefers-color-scheme: dark) {
   html {
