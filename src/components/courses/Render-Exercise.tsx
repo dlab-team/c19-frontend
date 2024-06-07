@@ -19,7 +19,7 @@ export const Render = ({contenidoHtml, contenidoCss}:Props) =>{
     return(
         <Container>
         <div style={{height: "60vh", border:"1px solid black", boxShadow:"3px 3px 5px #444" ,borderRadius:"0 0 5px 5px"}}>
-            <iframe srcDoc={contenido} style={{height: "58vh"}}></iframe>
+                <iframe srcDoc={contenido} style={{ height: "100%", width: "100%"}}></iframe>
         </div>
         </Container>
     )
