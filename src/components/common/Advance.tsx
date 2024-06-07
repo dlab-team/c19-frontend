@@ -14,9 +14,9 @@ export const Advance = ({ actualStep }: Props) => {
     const [step, setStep] = useState<number>(actualStep);
     const router = useRouter();
   return (
-    <>
+    <div className="mb-3">
       <Discord />
-      <Container className="d-flex justify-content-between px-1 mt-1">
+      <Container className="d-flex justify-content-between px-1 mt-3">
         <div className="d-flex justify-content-end px-2 ">
           <button
             className="bg_excercises px-4 py-2 next_button"
@@ -34,6 +34,6 @@ export const Advance = ({ actualStep }: Props) => {
           </button>
         </div>
       </Container>
-    </>
+    </div>
   );
 };
