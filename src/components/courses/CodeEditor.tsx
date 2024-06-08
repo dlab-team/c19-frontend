@@ -3,8 +3,7 @@ import { Editor } from "@monaco-editor/react";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import "../../app/page.module.css";
-import { FileContent, Files } from "./ContainerCodeRender";
-
+import { Files } from "./ContainerCodeRender";
 
 export interface Props {
   codeType: "css" | "html" | "html-css";
@@ -24,7 +23,7 @@ export const CodeEditor = ({
   setHTMLCode,
 }: Props) => {
   const [fileName, setFileName] = useState<string>(
-    codeType === "css" ? "style.css" : "index.html"
+    codeType === "css" ? "style.css" : "index.html",
   );
   const file = files[fileName];
 
@@ -70,7 +69,7 @@ export const CodeEditor = ({
           defaultLanguage={file.language}
           defaultValue={file.value}
           value={stateCssCode}
-          onChange={(newValue, e) => setCssCodeS(newValue!)}
+          onChange={(newValue) => setCssCodeS(newValue!)}
         />
       ) : (
         <Editor
@@ -81,11 +80,9 @@ export const CodeEditor = ({
           defaultLanguage={file.language}
           defaultValue={file.value}
           value={stateHtmlCode}
-          onChange={(newValue, e) => setHTMLCode(newValue!)}
+          onChange={(newValue) => setHTMLCode(newValue!)}
         />
       )}
     </Container>
   );
 };
-
-

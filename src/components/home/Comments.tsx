@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { CommentCard } from './CommentCard';
+import { CommentCard } from "./CommentCard";
 
 export const Comments = () => {
   return (
@@ -18,4 +18,4 @@ export const Comments = () => {
       </Row>
     </Container>
   );
-}
+};

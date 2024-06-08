@@ -1,9 +1,8 @@
-import {Container} from "react-bootstrap";
+import React from "react";
+import { Container } from "react-bootstrap";
 import type { Metadata } from "next";
 import { Advance } from "@/components";
-import {ContainerCodeRender} from "@/components/courses/index";
-
-
+import { ContainerCodeRender } from "@/components/courses/index";
 
 interface Props {
   params: { id: number };
@@ -41,7 +40,12 @@ const HtmlCssPage = ({ params }: Props) => {
           accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut
         </h4>
       </Container>
-      <ContainerCodeRender codeType={'html-css'} excerciseId={params.id} cssCode={""} htmlCode={""} />
+      <ContainerCodeRender
+        codeType={"html-css"}
+        excerciseId={params.id}
+        cssCode={""}
+        htmlCode={""}
+      />
       <Advance actualStep={Number(params.id)} />
     </Container>
   );

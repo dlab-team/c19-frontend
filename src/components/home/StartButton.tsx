@@ -1,20 +1,15 @@
-'use client'
-import React from 'react'
-import { Button } from 'react-bootstrap';
-import { useRouter } from 'next/navigation'
-
+"use client";
+import React from "react";
+import { Button } from "react-bootstrap";
+import { useRouter } from "next/navigation";
 
 const StartButton = () => {
-    const router = useRouter();
+  const router = useRouter();
   return (
-    <Button
-      className=""
-      onClick={() => router.push("/courses")}
-      variant="dark"
-    >
+    <Button className="" onClick={() => router.push("/courses")} variant="dark">
       Empezar
     </Button>
   );
 };
 
-export default StartButton
+export default StartButton;

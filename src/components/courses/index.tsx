@@ -1,5 +1,4 @@
-export {ContainerCodeRender} from "./ContainerCodeRender";
+export { ContainerCodeRender } from "./ContainerCodeRender";
 
-export {CodeEditor} from "./CodeEditor";
+export { CodeEditor } from "./CodeEditor";
 export { Render } from "./Render-Exercise";
-
