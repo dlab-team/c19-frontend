@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { CodeEditor, Render } from "./index";
-import { html_css_problems } from "@/problems/html-css/html_css_problems";
+import { htmlCssProblems } from "@/problems/html-css/html_css_problems";
 
 interface Props {
   codeType: "css" | "html" | "html-css";
@@ -23,22 +23,22 @@ export interface Files {
 
 export const ContainerCodeRender = ({ codeType, excerciseId }: Props) => {
   const [cssCode, setCssCode] = useState(
-    html_css_problems[excerciseId - 1].cssCode
+    htmlCssProblems[excerciseId - 1].cssCode,
   );
-    const [HTMLcode, setHTMLCode] = useState(
-      html_css_problems[excerciseId - 1].htmlCode
-    );
+  const [HTMLcode, setHTMLCode] = useState(
+    htmlCssProblems[excerciseId - 1].htmlCode,
+  );
 
   const files: Files = {
     "style.css": {
       name: "style.css",
       language: "css",
-      value: html_css_problems[excerciseId - 1].cssCode,
+      value: htmlCssProblems[excerciseId - 1].cssCode,
     },
     "index.html": {
       name: "index.html",
       language: "html",
-      value: html_css_problems[excerciseId - 1].htmlCode,
+      value: htmlCssProblems[excerciseId - 1].htmlCode,
     },
   };
   return (

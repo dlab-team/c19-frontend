@@ -1,4 +1,4 @@
-export const html_css_problems = [
+export const htmlCssProblems = [
   {
     enunciado: "Enunciado 1",
     cssCode: `.rojo{

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React from "react";
+import { Container } from "react-bootstrap";
 
 export const Discord = () => {
   return (
@@ -11,6 +11,7 @@ export const Discord = () => {
           <a
             href="https://discord.gg/Zmmch5KgWr"
             target="_blank"
+            rel="noreferrer"
             className="text-decoration-underline text-primary"
           >
             Discord
@@ -19,4 +20,4 @@ export const Discord = () => {
       </div>
     </Container>
   );
-}
+};

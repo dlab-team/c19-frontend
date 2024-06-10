@@ -4,9 +4,7 @@ import Image from "next/image";
 import React from "react";
 import Container from "react-bootstrap/Container";
 
-
 export default function Home() {
-  
   return (
     <Container className="mt-5">
       <Container className=" p-3 d-flex  flex-column justify-content-center align-items-center ">

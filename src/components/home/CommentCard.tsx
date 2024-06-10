@@ -1,10 +1,9 @@
-'use client'
+"use client";
 
-import Image from 'next/image';
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import Image from "next/image";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-
 
 export const CommentCard = () => {
   return (
@@ -13,7 +12,7 @@ export const CommentCard = () => {
       className="shadow p-3 mb-5 bg-body rounded"
     >
       <Card.Body>
-        <Card.Title className="m-2">"Lorem Ipsum"</Card.Title>
+        <Card.Title className="m-2">Lorem Ipsum</Card.Title>
         <Container>
           <Row>
             <Col xs={4}>
@@ -28,5 +27,4 @@ export const CommentCard = () => {
       </Card.Body>
     </Card>
   );
-}
-
+};
