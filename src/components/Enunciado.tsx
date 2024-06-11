@@ -1,12 +1,8 @@
 import React from "react";
-interface EnunciadoProps{text: string}
+interface EnunciadoProps {
+  text: string;
+}
 
-const Enunciado: React.FC<EnunciadoProps> = ({text}) => {
-    return (
-        <div>
-            {text}
-        </div>
-    )
+export const Enunciado: React.FC<EnunciadoProps> = ({ text }) => {
+  return <h4>{text}</h4>;
 };
-
-export default Enunciado;

@@ -1,12 +1,8 @@
-/* eslint-disable prettier/prettier */
-import {Container} from "react-bootstrap";
+import React from "react";
+import { Container } from "react-bootstrap";
 import type { Metadata } from "next";
-import CodeEditor from "@/components/courses/CodeEditor";
-import { html_css_problems } from "@/problems/html-css/html_css_problems";
-import { Advance } from "@/components";
-import  Enunciado  from "@/components/Enunciado";
-
-
+import { Advance, Enunciado, ContainerCodeRender } from "@/components";
+import { htmlCssProblems } from "@/problems/html-css/html_css_problems";
 
 interface Props {
   params: { id: number };
@@ -29,30 +25,14 @@ const HtmlCssPage = ({ params }: Props) => {
         {/* TODO componente que lleve registro del avance */}
       </Container>
       <Container>
-        <h4>
-          <Enunciado text={"Escribir aqui el enunciado del ejercicio 1"}></Enunciado>
-        </h4>
+        <Enunciado text={htmlCssProblems[params.id - 1].enunciado} />
       </Container>
-      <Container
-        fluid
-        className="d-flex justify-content-between align-items-center gap-5 flex-column flex-md-row"
-      >
-        <div className="">
-          <h4>Editor</h4>
-          <h6>Escribe tu respuesta dentro del Editor</h6>
-          <CodeEditor
-            codeType="html-css"
-            cssCode={html_css_problems[params.id - 1].cssCode}
-            htmlCode={html_css_problems[params.id - 1].htmlCode}
-          />
-        </div>
-        <div className="flex-fill">
-          <h4>Resultado</h4>
-          <h6>Resultado de la Ejecución - Renderizado</h6>
-          <div className="bg-secondary " style={{ height: "50vh" }}></div>
-          {/* TODO: sustituir por componente resultado */}
-        </div>
-      </Container>
+      <ContainerCodeRender
+        codeType={"html-css"}
+        excerciseId={params.id}
+        cssCode={""}
+        htmlCode={""}
+      />
       <Advance actualStep={Number(params.id)} />
     </Container>
   );

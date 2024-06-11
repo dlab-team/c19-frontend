@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import { CodeEditor, Render } from "./index";
+import { CodeEditor, Render } from "@/components";
 import { htmlCssProblems } from "@/problems/html-css/html_css_problems";
 
 interface Props {
