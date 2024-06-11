@@ -28,7 +28,7 @@ export const CodeEditor = ({
   const file = files[fileName];
 
   return (
-    <Container>
+    <Container style={{ width: "100%" }}>
       {/* TODO bajar este div a otro componente para manejar los clicks  */}
       <div className="editor_top">
         <div className="p-1">
@@ -62,8 +62,8 @@ export const CodeEditor = ({
       </div>
       {fileName === "style.css" ? (
         <Editor
-          height="50vh"
-          width="40vw"
+          height="25rem"
+          width="100%"
           theme="vs-dark"
           path={file.name}
           defaultLanguage={file.language}
@@ -73,8 +73,8 @@ export const CodeEditor = ({
         />
       ) : (
         <Editor
-          height="50vh"
-          width="40vw"
+          height="25rem"
+          width="100%"
           theme="vs-dark"
           path={file.name}
           defaultLanguage={file.language}
