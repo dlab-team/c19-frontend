@@ -17,21 +17,20 @@ export const Render = ({ contenidoHtml, contenidoCss }: Props) => {
         </body>
         </html>`;
   return (
-    <Container>
-      <div
-        style={{
-          height: "60vh",
-          border: "1px solid black",
-          boxShadow: "3px 3px 5px #444",
-          borderRadius: "0 0 5px 5px",
-        }}
-      >
-        <iframe
-          title="Render"
-          srcDoc={contenido}
-          style={{ height: "100%", width: "100%" }}
-        ></iframe>
-      </div>
+    <Container
+      style={{
+        height: "29rem",
+        width: "100%",
+        border: "1px solid black",
+        boxShadow: "3px 3px 5px #444",
+        borderRadius: "0 0 5px 5px",
+      }}
+    >
+      <iframe
+        title="Render"
+        srcDoc={contenido}
+        style={{ height: "100%", width: "100%" }}
+      ></iframe>
     </Container>
   );
 };

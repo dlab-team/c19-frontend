@@ -46,7 +46,11 @@ export const ContainerCodeRender = ({ codeType, excerciseId }: Props) => {
       fluid
       className="d-flex justify-content-between align-items-center gap-5 flex-column flex-md-row"
     >
-      <div className="">
+      <div
+        style={{
+          width: "40vw",
+        }}
+      >
         <h4>Editor</h4>
         <h6>Escribe tu respuesta dentro del Editor</h6>
         <CodeEditor
@@ -58,7 +62,11 @@ export const ContainerCodeRender = ({ codeType, excerciseId }: Props) => {
           stateHtmlCode={HTMLcode}
         />
       </div>
-      <div className="flex-fill">
+      <div
+        style={{
+          width: "40vw",
+        }}
+      >
         <h4>Resultado</h4>
         <h6>Resultado de la Ejecución - Renderizado</h6>
         <Render contenidoHtml={HTMLcode} contenidoCss={cssCode} />
