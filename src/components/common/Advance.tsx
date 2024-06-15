@@ -39,6 +39,7 @@ export const Advance = ({ actualStep }: Props) => {
         <div className="d-flex justify-content-end px-2 ">
           <button
             className="bg_excercises px-4 py-2 next_button"
+
             //onClick={() => router.push(`/courses/html-css/${actualStep + 1}`)}
             onClick={handleNextStep}
             disabled={actualStep >= 4} //si el id es mayor a 4 entonces el

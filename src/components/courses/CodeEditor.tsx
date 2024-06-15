@@ -3,46 +3,32 @@ import { Editor } from "@monaco-editor/react";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import "../../app/page.module.css";
+import { Files } from "./ContainerCodeRender";
 
-interface FileContent {
-  name: string;
-  language: string;
-  value?: string;
-}
-
-interface Files {
-  [key: string]: FileContent;
-}
-
-interface Props {
+export interface Props {
   codeType: "css" | "html" | "html-css";
-  cssCode?: string;
-  htmlCode?: string;
+  stateCssCode?: string;
+  stateHtmlCode?: string;
+  files: Files;
+  setHTMLCode: (str: string) => void;
+  setCssCodeS: (str: string) => void;
 }
 
-const CodeEditor = ({ codeType, cssCode, htmlCode }: Props) => {
-
-  const files: Files = {
-    "style.css": {
-      name: "style.css",
-      language: "css",
-      value: cssCode,
-    },
-    "index.html": {
-      name: "index.html",
-      language: "html",
-      value: htmlCode,
-    },
-  };
-
+export const CodeEditor = ({
+  codeType,
+  stateCssCode,
+  stateHtmlCode,
+  files,
+  setCssCodeS,
+  setHTMLCode,
+}: Props) => {
   const [fileName, setFileName] = useState<string>(
-    codeType === "css" ? "style.css" : "index.html"
+    codeType === "css" ? "style.css" : "index.html",
   );
   const file = files[fileName];
-  const [code, setCode] = useState(file.value);
 
   return (
-    <Container>
+    <Container style={{ width: "100%" }}>
       {/* TODO bajar este div a otro componente para manejar los clicks  */}
       <div className="editor_top">
         <div className="p-1">
@@ -74,19 +60,29 @@ const CodeEditor = ({ codeType, cssCode, htmlCode }: Props) => {
           )}
         </div>
       </div>
-
-      <Editor
-        height="50vh"
-        width="40vw"
-        theme="vs-dark"
-        path={file.name}
-        defaultLanguage={file.language}
-        defaultValue={file.value}
-        value={code}
-        onChange={(newValue, e) => setCode(newValue!)}
-      />
+      {fileName === "style.css" ? (
+        <Editor
+          height="25rem"
+          width="100%"
+          theme="vs-dark"
+          path={file.name}
+          defaultLanguage={file.language}
+          defaultValue={file.value}
+          value={stateCssCode}
+          onChange={(newValue) => setCssCodeS(newValue!)}
+        />
+      ) : (
+        <Editor
+          height="25rem"
+          width="100%"
+          theme="vs-dark"
+          path={file.name}
+          defaultLanguage={file.language}
+          defaultValue={file.value}
+          value={stateHtmlCode}
+          onChange={(newValue) => setHTMLCode(newValue!)}
+        />
+      )}
     </Container>
   );
 };
-
-export default CodeEditor;
