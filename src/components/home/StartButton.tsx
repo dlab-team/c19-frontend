@@ -6,7 +6,11 @@ import { useRouter } from "next/navigation";
 const StartButton = () => {
   const router = useRouter();
   return (
-    <Button className="" onClick={() => router.push("/courses")} variant="dark">
+    <Button
+      className=""
+      onClick={() => router.push("/courses/categories/css")}
+      variant="dark"
+    >
       Empezar
     </Button>
   );
