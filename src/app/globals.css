@@ -145,7 +145,27 @@ footer{
   border-radius: 6px;
 
 }
+.bg-gray{
+  background-color: #D9D9D9;
+}
+.link-active{
+  background-color: #C6C6C6;
+  font-weight: bold;
+}
+.excercise-list{
+  width: 70rem;
+}
 
+.excercise-button{
+  text-decoration: none;
+  background-color: #F1662A;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem;
+}
 /*--------------------Estilos Personalizados del footer-----*/
 .social-link:hover {
   transform: scale(1.2);
