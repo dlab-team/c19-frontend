@@ -11,15 +11,15 @@ interface Props {
 export const Advance = ({ actualStep }: Props) => {
   const router = useRouter();
 
-  const handlepreviousStep = () => {
-    const previousStep = Math.max(actualStep -1, 1);
+  const handlePreviousStep = () => {
+    const previousStep = Math.max(actualStep - 1, 1);
     router.push(`/courses/html-css/${previousStep}`);
-  }
+  };
 
   const handleNextStep = () => {
-    const nextStep = Math.min(actualStep + 1 , 4);
+    const nextStep = Math.min(actualStep + 1, 4);
     router.push(`/courses/html-css/${nextStep}`);
-  }
+  };
 
   return (
     <div className="mb-3">
@@ -29,9 +29,8 @@ export const Advance = ({ actualStep }: Props) => {
           <button
             className="bg_excercises px-4 py-2 next_button"
             //onClick={() => router.push(`/courses/html-css/${actualStep - 1}`)}
-            onClick={handlepreviousStep}
-            disabled={actualStep <=1} //si el id es menor a uno entonces el btn, 
-                                      //se suspende
+            onClick={handlePreviousStep}
+            disabled={actualStep <= 1} //si el id es menor o igual a uno entonces el btn, se suspende
           >
             Anterior
           </button>
@@ -39,11 +38,9 @@ export const Advance = ({ actualStep }: Props) => {
         <div className="d-flex justify-content-end px-2 ">
           <button
             className="bg_excercises px-4 py-2 next_button"
-
             //onClick={() => router.push(`/courses/html-css/${actualStep + 1}`)}
             onClick={handleNextStep}
-            disabled={actualStep >= 4} //si el id es mayor a 4 entonces el
-                                        //btn se suspende
+            disabled={actualStep >= 4} //si el id es mayor o igual a 4 entonces el btn se suspende
           >
             Siguiente
           </button>
