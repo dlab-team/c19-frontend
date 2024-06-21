@@ -23,7 +23,7 @@ export const CodeEditor = ({
   setHTMLCode,
 }: Props) => {
   const [fileName, setFileName] = useState<string>(
-    codeType === "css" ? "style.css" : "index.html"
+    codeType === "css" ? "style.css" : "index.html",
   );
   const file = files[fileName];
 

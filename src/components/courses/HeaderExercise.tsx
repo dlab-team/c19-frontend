@@ -1,11 +1,16 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-export default function HeaderExercise(props: any) {
+interface Props {
+  lenguaje: string;
+  id: number;
+}
+
+export default function HeaderExercise({ lenguaje, id }: Props) {
   let color = "";
-  if (props.lenguaje == "html") {
+  if (lenguaje == "html") {
     color = "bg_excercises_html";
-  } else if (props.lenguaje == "css") {
+  } else if (lenguaje == "css") {
     color = "bg_excercises_css";
   } else {
     color = "bg_excercises";
@@ -16,9 +21,9 @@ export default function HeaderExercise(props: any) {
       className="rounded d-flex justify-content-center align-items-center gap-3"
     >
       <h2 className="py-5 fw-bold fs-1">
-        Ejercicios <span className="text-uppercase">{props.lenguaje}</span>
+        Ejercicios <span className="text-uppercase">{lenguaje}</span>
       </h2>
-      <h6 className="bg-light text-dark rounded p-2"> {props.id}/20</h6>{" "}
+      <h6 className="bg-light text-dark rounded p-2"> {id}/20</h6>{" "}
     </Container>
   );
 }

@@ -32,7 +32,7 @@ const HtmlCssPage = ({ params }: Props) => {
         cssCode={""}
         htmlCode={""}
       />
-      <Advance actualStep={Number(params.id)} />
+      <Advance actualStep={Number(params.id)} lenguaje={problem.codeType} />
     </Container>
   );
 };
