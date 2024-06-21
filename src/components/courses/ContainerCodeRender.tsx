@@ -5,7 +5,7 @@ import { CodeEditor, Render } from "@/components";
 import { filterExercisesById } from "@/helpers/filterExcercises";
 
 interface Props {
-  codeType: "css" | "html" | "html-css";
+  codeType: string;
   excerciseId: number;
   cssCode: string;
   htmlCode: string;

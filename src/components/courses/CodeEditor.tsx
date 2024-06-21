@@ -6,7 +6,7 @@ import "../../app/page.module.css";
 import { Files } from "./ContainerCodeRender";
 
 export interface Props {
-  codeType: "css" | "html" | "html-css";
+  codeType: string;
   stateCssCode?: string;
   stateHtmlCode?: string;
   files: Files;
