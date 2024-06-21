@@ -6,7 +6,7 @@ import "../../app/page.module.css";
 import { Files } from "./ContainerCodeRender";
 
 export interface Props {
-  codeType: "css" | "html" | "html-css";
+  codeType: string;
   stateCssCode?: string;
   stateHtmlCode?: string;
   files: Files;
@@ -23,7 +23,7 @@ export const CodeEditor = ({
   setHTMLCode,
 }: Props) => {
   const [fileName, setFileName] = useState<string>(
-    codeType === "css" ? "style.css" : "index.html",
+    codeType === "css" ? "style.css" : "index.html"
   );
   const file = files[fileName];
 
