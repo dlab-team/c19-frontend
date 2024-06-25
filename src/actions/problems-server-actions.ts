@@ -1,5 +1,7 @@
+"use server";
 import htmlCssProblems from "@/problems/problems.json";
 import type { Problem, Problems } from "@/interfaces/problems";
+
 const problems: Problems = htmlCssProblems;
 
 function filterExercisesById(id: number): Problem | Record<string, never> {

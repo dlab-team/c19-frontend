@@ -1,14 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { CodeEditor, Render } from "@/components";
-import { filterExercisesById } from "@/helpers/filterExcercises";
+import {
+  getSolvedListCookie,
+  setProdListCookie,
+} from "@/actions/cookies-client";
+import { Problem } from "@/interfaces/problems";
 
 interface Props {
-  codeType: string;
   excerciseId: number;
-  cssCode: string;
-  htmlCode: string;
+  problem: Problem | Record<string, never>;
 }
 
 export interface FileContent {
@@ -21,23 +23,29 @@ export interface Files {
   [key: string]: FileContent;
 }
 
-export const ContainerCodeRender = ({ codeType, excerciseId }: Props) => {
-  const problem = filterExercisesById(Number(excerciseId));
-  const [cssCode, setCssCode] = useState(problem.cssCode);
-  const [HTMLcode, setHTMLCode] = useState(problem.htmlCode);
+export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
+  const cookieList = getSolvedListCookie();
+  //const problem = filterExercisesById(Number(excerciseId));
 
-  /* TODO crear una funcion que guarde los estados de los editores en cookie
-    va a recibir dos parametros opcionales, codigohtml y codigocss.
-    esos codigos los va a pasar la variable de estado respectiva y a las cookies
-    la cookie tiene la firma de:
-    interface Status {
-      problemId: number;
-      solved: boolean;
-      solvedTimeStamp?: Date;
-      html?: string;
-      css?: string;
-    }
-  */
+  const [cssCode, setCssCode] = useState("");
+  const [HTMLcode, setHTMLCode] = useState("");
+
+  useEffect(() => {
+    // Inicializa los estados con los valores de las cookies o con los valores iniciales del problema
+    const initialCssCode = cookieList[excerciseId]
+      ? cookieList[excerciseId].css
+      : problem.cssCode;
+    const initialHTMLcode = cookieList[excerciseId]
+      ? cookieList[excerciseId].html
+      : problem.htmlCode;
+    setCssCode(initialCssCode);
+    setHTMLCode(initialHTMLcode);
+  }, [excerciseId]);
+
+  useEffect(() => {
+    const date = new Date();
+    setProdListCookie(Number(excerciseId), true, date, HTMLcode, cssCode);
+  }, [excerciseId, HTMLcode, cssCode]);
 
   const files: Files = {
     "style.css": {
@@ -64,7 +72,7 @@ export const ContainerCodeRender = ({ codeType, excerciseId }: Props) => {
         <h4>Editor</h4>
         <h6>Escribe tu respuesta dentro del Editor</h6>
         <CodeEditor
-          codeType={codeType}
+          codeType={problem.codeType}
           files={files}
           setHTMLCode={setHTMLCode}
           setCssCodeS={setCssCode}
