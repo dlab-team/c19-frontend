@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { CodeEditor, Render } from "@/components";
-import { htmlCssProblems } from "@/problems/html-css/html_css_problems";
+import { filterExercisesById } from "@/helpers/filterExcercises";
 
 interface Props {
-  codeType: "css" | "html" | "html-css";
+  codeType: string;
   excerciseId: number;
   cssCode: string;
   htmlCode: string;
@@ -22,23 +22,33 @@ export interface Files {
 }
 
 export const ContainerCodeRender = ({ codeType, excerciseId }: Props) => {
-  const [cssCode, setCssCode] = useState(
-    htmlCssProblems[excerciseId - 1].cssCode,
-  );
-  const [HTMLcode, setHTMLCode] = useState(
-    htmlCssProblems[excerciseId - 1].htmlCode,
-  );
+  const problem = filterExercisesById(Number(excerciseId));
+  const [cssCode, setCssCode] = useState(problem.cssCode);
+  const [HTMLcode, setHTMLCode] = useState(problem.htmlCode);
+
+  /* TODO crear una funcion que guarde los estados de los editores en cookie
+    va a recibir dos parametros opcionales, codigohtml y codigocss.
+    esos codigos los va a pasar la variable de estado respectiva y a las cookies
+    la cookie tiene la firma de:
+    interface Status {
+      problemId: number;
+      solved: boolean;
+      solvedTimeStamp?: Date;
+      html?: string;
+      css?: string;
+    }
+  */
 
   const files: Files = {
     "style.css": {
       name: "style.css",
       language: "css",
-      value: htmlCssProblems[excerciseId - 1].cssCode,
+      value: problem.cssCode,
     },
     "index.html": {
       name: "index.html",
       language: "html",
-      value: htmlCssProblems[excerciseId - 1].htmlCode,
+      value: problem.htmlCode,
     },
   };
   return (

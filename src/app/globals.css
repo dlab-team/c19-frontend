@@ -102,13 +102,31 @@ footer{
   background: #38353f;
 }
 
-.bg_excercises {
+#bg_excercises {
   background: rgb(240, 101, 41);
   background: linear-gradient(
     90deg,
     rgba(240, 101, 41, 1) 0%,
     rgba(235, 235, 235, 1) 35%,
     rgba(41, 101, 241, 1) 100%
+  );
+}
+
+#bg_excercises_css{
+  background: rgb(64, 119, 248);
+  background: linear-gradient(
+    90deg,
+    rgba(235, 235, 235, 1) 1%,
+    rgb(64, 119, 248) 100%
+  );
+}
+
+#bg_excercises_html{
+  background: rgb(240, 101, 41);
+  background: linear-gradient(
+    90deg,
+    rgba(235, 235, 235, 1) 1%,
+    rgb(240, 101, 41) 100%
   );
 }
 
@@ -145,7 +163,27 @@ footer{
   border-radius: 6px;
 
 }
+.bg-gray{
+  background-color: #D9D9D9;
+}
+.link-active{
+  background-color: #C6C6C6;
+  font-weight: bold;
+}
+.excercise-list{
+  width: 70rem;
+}
 
+.excercise-button{
+  text-decoration: none;
+  background-color: #F1662A;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem;
+}
 /*--------------------Estilos Personalizados del footer-----*/
 .social-link:hover {
   transform: scale(1.2);

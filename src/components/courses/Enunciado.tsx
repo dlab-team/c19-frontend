@@ -1,6 +1,6 @@
 import React from "react";
 interface EnunciadoProps {
-  text: string;
+  text?: string;
 }
 
 export const Enunciado: React.FC<EnunciadoProps> = ({ text }) => {
