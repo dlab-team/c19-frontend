@@ -2,12 +2,15 @@ import React from "react";
 import htmlCssProblems from "@/problems/problems.json";
 import Excercise from "@/components/courses/Excercise";
 import type { Problems } from "@/interfaces/problems";
+import { getServerCookies } from "@/actions/cookies-server-actions";
 
 interface Props {
   params: { category: string };
 }
 
 const CategoryPage = ({ params }: Props) => {
+  const cookieList = getServerCookies();
+
   const problems: Problems = htmlCssProblems;
   const title = problems[params.category][0].title;
 
@@ -28,6 +31,7 @@ const CategoryPage = ({ params }: Props) => {
             key={problem.id}
             id={problem.id}
             type={problem.codeType}
+            cookieList={cookieList[problem.id]}
           />
         ))}
       </div>

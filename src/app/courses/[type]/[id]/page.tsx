@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import type { Metadata } from "next";
 import { Advance, Enunciado, ContainerCodeRender } from "@/components";
 import HeaderExercise from "@/components/courses/HeaderExercise";
-import { filterExercisesById } from "@/helpers/filterExcercises";
+import { filterExercisesById } from "@/actions/problems-server-actions";
 
 interface Props {
   params: { id: number };
@@ -26,12 +26,7 @@ const HtmlCssPage = ({ params }: Props) => {
       <Container>
         <Enunciado text={problem && problem.enunciado} />
       </Container>
-      <ContainerCodeRender
-        codeType={problem.codeType}
-        excerciseId={params.id}
-        cssCode={""}
-        htmlCode={""}
-      />
+      <ContainerCodeRender excerciseId={params.id} problem={problem} />
       <Advance actualStep={Number(params.id)} lenguaje={problem.codeType} />
     </Container>
   );

@@ -13,12 +13,13 @@ interface Problems {
   [key: string]: Problem[];
 }
 
-interface Status {
-  problemId: number;
+interface AdvanceStatus {
+  [key: number]: ProblemSolved;
+}
+interface ProblemSolved {
   solved: boolean;
   solvedTimeStamp?: Date;
   html?: string;
   css?: string;
 }
-
-export type { Problem, Problems, Status };
+export type { Problem, Problems, AdvanceStatus, ProblemSolved };
