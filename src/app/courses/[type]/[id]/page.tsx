@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Advance, Enunciado, ContainerCodeRender } from "@/components";
 import HeaderExercise from "@/components/courses/HeaderExercise";
 import { filterExercisesById } from "@/actions/problems-server-actions";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: { id: number };
@@ -17,8 +18,11 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-const HtmlCssPage = ({ params }: Props) => {
-  const problem = filterExercisesById(Number(params.id));
+const HtmlCssPage = async ({ params }: Props) => {
+  const problem = await filterExercisesById(Number(params.id));
+  if (Object.keys(problem).length === 0) {
+    notFound();
+  }
 
   return (
     <Container className="mt-5 d-flex flex-column gap-5  ">

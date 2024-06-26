@@ -163,6 +163,14 @@ footer{
   border-radius: 6px;
 
 }
+.back_button {
+  background-color: #749B28;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  color: white;
+
+}
 .bg-gray{
   background-color: #D9D9D9;
 }
