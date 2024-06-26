@@ -3,6 +3,7 @@ import htmlCssProblems from "@/problems/problems.json";
 import Excercise from "@/components/courses/Excercise";
 import type { Problems } from "@/interfaces/problems";
 import { getServerCookies } from "@/actions/cookies-server-actions";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: { category: string };
@@ -12,7 +13,12 @@ const CategoryPage = ({ params }: Props) => {
   const cookieList = getServerCookies();
 
   const problems: Problems = htmlCssProblems;
-  const title = problems[params.category][0].title;
+  let title: string;
+  if (problems[params.category]) {
+    title = problems[params.category][0].title;
+  } else {
+    notFound();
+  }
 
   return (
     <div className="m-5 excercise-list">

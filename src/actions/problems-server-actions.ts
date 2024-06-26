@@ -4,7 +4,9 @@ import type { Problem, Problems } from "@/interfaces/problems";
 
 const problems: Problems = htmlCssProblems;
 
-function filterExercisesById(id: number): Problem | Record<string, never> {
+async function filterExercisesById(
+  id: number,
+): Promise<Problem | Record<string, never>> {
   const categories = Object.keys(problems);
 
   for (const category of categories) {
