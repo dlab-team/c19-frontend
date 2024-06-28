@@ -1,12 +1,14 @@
 interface Problem {
+  id: number;
   title: string;
   subtitle: string;
+  codeType: string;
   enunciado: string;
+  descripcion: string;
   cssCode: string;
   htmlCode: string;
-  descripcion: string;
-  id: number;
-  codeType: string;
+  desiredHTMLCode: string;
+  desiredCSSCode: string;
 }
 
 interface Problems {

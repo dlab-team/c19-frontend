@@ -7,6 +7,7 @@ import {
   setProdListCookie,
 } from "@/actions/cookies-client";
 import { Problem } from "@/interfaces/problems";
+import { handleTest } from "@/actions/problems-client-actions";
 
 interface Props {
   excerciseId: number;
@@ -25,7 +26,6 @@ export interface Files {
 
 export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   const cookieList = getSolvedListCookie();
-  //const problem = filterExercisesById(Number(excerciseId));
 
   const [cssCode, setCssCode] = useState("");
   const [HTMLcode, setHTMLCode] = useState("");
@@ -59,36 +59,42 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
       value: problem.htmlCode,
     },
   };
+
   return (
-    <Container
-      fluid
-      className="d-flex justify-content-between align-items-center gap-5 flex-column flex-md-row"
-    >
-      <div
-        style={{
-          width: "40vw",
-        }}
+    <>
+      <Container
+        fluid
+        className="d-flex justify-content-between align-items-center gap-5 flex-column flex-md-row"
       >
-        <h4>Editor</h4>
-        <h6>Escribe tu respuesta dentro del Editor</h6>
-        <CodeEditor
-          codeType={problem.codeType}
-          files={files}
-          setHTMLCode={setHTMLCode}
-          setCssCodeS={setCssCode}
-          stateCssCode={cssCode}
-          stateHtmlCode={HTMLcode}
-        />
-      </div>
-      <div
-        style={{
-          width: "40vw",
-        }}
-      >
-        <h4>Resultado</h4>
-        <h6>Resultado de la Ejecución - Renderizado</h6>
-        <Render contenidoHtml={HTMLcode} contenidoCss={cssCode} />
-      </div>
-    </Container>
+        <div
+          style={{
+            width: "40vw",
+          }}
+        >
+          <h4>Editor</h4>
+          <h6>Escribe tu respuesta dentro del Editor</h6>
+          <CodeEditor
+            codeType={problem.codeType}
+            files={files}
+            setHTMLCode={setHTMLCode}
+            setCssCodeS={setCssCode}
+            stateCssCode={cssCode}
+            stateHtmlCode={HTMLcode}
+          />
+        </div>
+        <div
+          style={{
+            width: "40vw",
+          }}
+        >
+          <h4>Resultado</h4>
+          <h6>Resultado de la Ejecución - Renderizado</h6>
+          <Render contenidoHtml={HTMLcode} contenidoCss={cssCode} />
+        </div>
+      </Container>
+      <button onClick={() => handleTest(HTMLcode, problem.desiredHTMLCode)}>
+        Probar
+      </button>
+    </>
   );
 };
