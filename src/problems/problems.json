@@ -1,0 +1,152 @@
+ {
+        "html": [
+            {
+                "id": 1,
+                "title": "HTML",
+                "subtitle": "Etiquetas",
+                "codeType": "html",
+                "enunciado": "Crea un link a desafiolatam.com que diga 'Ir a Desafío Latam'.",
+                "descripcion": "Para crear un link a otro sitio se debe usar la etiqueta <a> y el atributo href que indica la dirección a la que se redirigirá al usuario al hacer click en el link.\n Ejemplo: <a href='https://www.google.com'>Ir a Google</a> \n",
+                "cssCode": ".rojo{\n    color: red;\n}\n.azul{\n    color: blue;\n}\n.verde{\n    color: green;\n}\n.container{\n    display: flex;\n    justify-content: space-between;\n    padding: 3rem;\n}\n.body{\n    box-sizing: border-box;\n}",
+                "htmlCode": "<!-- Escribe tu codigo aqui -->",
+                "desiredHTMLCode": "<a href='www.desafiolatam.com'>Ir a Desafío Latam</a>",
+                "desiredCSSCode": ""
+            },
+            {
+                "id": 2,
+                "title": "HTML",
+                "codeType": "html",
+                "subtitle": "Colores en CSS",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css 2*/",
+                "desiredHTMLCode": "<a href='www.desafiolatam.com'>Ir a Desafío Latam</a>",
+                "desiredCSSCode": "",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema 2-->\n</body>\n</html>",
+                "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+                "id": 3,
+                "title": "HTML",
+                "codeType": "html",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Agregar una propiedad y un valor a un CSS",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css 3*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema 3-->\n</body>\n</html>",
+                "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+                "id": 4,
+                "title": "HTML",
+                "codeType": "html",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Agregar un archivo CSS",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css 4*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema 4-->\n</body>\n</html>",
+                "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+        ],
+        "css": [
+            {
+                "id": 5,
+                "title": "CSS",
+                "subtitle": "CSS Ejemplo 1",
+                "codeType": "css",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "body{background-color:red;}",
+                "enunciado": "Cambialdo los colores del Body",
+                "cssCode": "/*code css medio 1*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema medio 1-->\n</body>\n</html>",
+                "descripcion": "Cambiar el color del fondo del body por Rojo usando la etiqueta background-color: ;"
+            },
+            {
+                "id": 6,
+                "title": "CSS",
+                "codeType": "css",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "CSS Ejemplo 2",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css medio 2*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema medio 2-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            },
+            {
+                "id": 7,
+                "title": "CSS",
+                "codeType": "css",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "CSS Ejemplo 3",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css medio 1*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema medio 1-->\n</body>\n</html>",
+                "descripcion": "Este es un problema de nivel medio sobre conceptos básicos de CSS."
+            },
+            {
+                "id": 8,
+                "title": "CSS",
+                "codeType": "css",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "CSS Ejemplo 4",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css medio 2*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema medio 2-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            }
+        ],
+        "html-css": [
+            {
+                "id": 9,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "desiredHTMLCode": "<a href='www.desafiolatam.com'>Ir a Desafío Latam</a>",
+                "desiredCSSCode": "body{background-color:red;}",
+                "subtitle": "Avanzado Ejemplo 1",
+                "enunciado": "Crea un link a desafiolatam.com que diga 'Ir a Desafío Latam'. Y Cambiar el color del fondo del body por Rojo usando la etiqueta background-color: ; ",
+                "cssCode": "/*code css avanzado 1*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema avanzado 1-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            },
+            {
+                "id": 10,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Avanzado Ejemplo 2",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css avanzado 2*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema avanzado 2-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            },
+            {
+                "id": 11,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Avanzado Ejemplo 3",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css avanzado 1*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema avanzado 1-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            },
+            {
+                "id": 12,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Avanzado Ejemplo 4",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": "/*code css avanzado 2*/",
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema avanzado 2-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            }
+        ]
+    }
