@@ -24,12 +24,17 @@ export const Render = ({ contenidoHtml, contenidoCss }: Props) => {
         border: "1px solid black",
         boxShadow: "3px 3px 5px #444",
         borderRadius: "0 0 5px 5px",
+        padding: "0",
       }}
     >
       <iframe
         title="Render"
         srcDoc={contenido}
-        style={{ height: "100%", width: "100%" }}
+        style={{
+          height: "100%",
+          width: "100%",
+          background: "#FFFFFF",
+        }}
       ></iframe>
     </Container>
   );

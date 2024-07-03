@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import { Element } from "cheerio";
+import Swal from "sweetalert2";
 
 const compareElements = (
   $userElement: cheerio.Cheerio<Element>,
@@ -42,7 +43,12 @@ const handleTest = (userCode: string, desiredCode: string) => {
   const desiredElements = $desiredCode("body").find("*");
 
   if (userElements.length !== desiredElements.length) {
-    console.log("reprobado");
+    Swal.fire({
+      title: "Respuesta Incorrecta",
+      text: "Vuelve a intentarlo",
+      icon: "error",
+      confirmButtonText: "Ok",
+    });
     return;
   }
 
@@ -51,12 +57,22 @@ const handleTest = (userCode: string, desiredCode: string) => {
     const $desiredElement = $desiredCode(desiredElements[i]);
 
     if (!compareElements($userElement, $desiredElement)) {
-      console.log("reprobado");
+      Swal.fire({
+        title: "Respuesta Incorrecta",
+        text: "Vuelve a intentarlo",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
       return;
     }
   }
 
-  console.log("aprobado");
+  Swal.fire({
+    title: "Respuesta Correcta",
+    text: "Estas haciendo un buen trabajo",
+    icon: "success",
+    confirmButtonText: "Ok",
+  });
 };
 
 export { handleTest };

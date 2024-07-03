@@ -59,20 +59,28 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
       value: problem.htmlCode,
     },
   };
+  let color = "";
+  if (problem.codeType == "html") {
+    color = "bg_excercises_html";
+  } else if (problem.codeType == "css") {
+    color = "bg_excercises_css";
+  } else {
+    color = "bg_excercises";
+  }
 
   return (
-    <>
-      <Container
-        fluid
-        className="d-flex justify-content-between align-items-center gap-5 flex-column flex-md-row"
+    <Container
+      fluid
+      className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3"
+    >
+      <div
+        style={{
+          width: "40vw",
+        }}
       >
-        <div
-          style={{
-            width: "40vw",
-          }}
-        >
-          <h4>Editor</h4>
-          <h6>Escribe tu respuesta dentro del Editor</h6>
+        <h4>Editor</h4>
+        <h6>Escribe tu respuesta dentro del Editor</h6>
+        <div className="d-flex flex-column gap-2">
           <CodeEditor
             codeType={problem.codeType}
             files={files}
@@ -81,20 +89,28 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
             stateCssCode={cssCode}
             stateHtmlCode={HTMLcode}
           />
+          <div className="d-flex justify-content-end me-2">
+            <button
+              id={color}
+              className="bg_excercises px-4 py-2 next_button"
+              onClick={() => handleTest(HTMLcode, problem.desiredHTMLCode)}
+            >
+              Ejecutar
+            </button>
+          </div>
         </div>
-        <div
-          style={{
-            width: "40vw",
-          }}
-        >
-          <h4>Resultado</h4>
-          <h6>Resultado de la Ejecución - Renderizado</h6>
+      </div>
+      <div
+        style={{
+          width: "40vw",
+        }}
+      >
+        <h4>Resultado</h4>
+        <h6>Resultado de la Ejecución - Renderizado</h6>
+        <div>
           <Render contenidoHtml={HTMLcode} contenidoCss={cssCode} />
         </div>
-      </Container>
-      <button onClick={() => handleTest(HTMLcode, problem.desiredHTMLCode)}>
-        Probar
-      </button>
-    </>
+      </div>
+    </Container>
   );
 };
