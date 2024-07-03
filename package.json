@@ -12,6 +12,7 @@
     "@monaco-editor/react": "^4.6.0",
     "@types/node": "^20.14.2",
     "bootstrap": "^5.3.3",
+    "cheerio": "^1.0.0-rc.12",
     "cookies-next": "^4.2.1",
     "monaco-editor": "^0.48.0",
     "next": "14.2.3",
@@ -20,6 +21,7 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "sharp": "^0.33.4",
+    "sweetalert2": "^11.12.1",
     "typescript": "^5.4.5"
   },
   "devDependencies": {

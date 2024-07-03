@@ -7,6 +7,7 @@ import {
   setProdListCookie,
 } from "@/actions/cookies-client";
 import { Problem } from "@/interfaces/problems";
+import { handleTest } from "@/actions/problems-client-actions";
 
 interface Props {
   excerciseId: number;
@@ -25,7 +26,6 @@ export interface Files {
 
 export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   const cookieList = getSolvedListCookie();
-  //const problem = filterExercisesById(Number(excerciseId));
 
   const [cssCode, setCssCode] = useState("");
   const [HTMLcode, setHTMLCode] = useState("");
@@ -59,10 +59,19 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
       value: problem.htmlCode,
     },
   };
+  let color = "";
+  if (problem.codeType == "html") {
+    color = "bg_excercises_html";
+  } else if (problem.codeType == "css") {
+    color = "bg_excercises_css";
+  } else {
+    color = "bg_excercises";
+  }
+
   return (
     <Container
       fluid
-      className="d-flex justify-content-between align-items-center gap-5 flex-column flex-md-row"
+      className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3"
     >
       <div
         style={{
@@ -71,14 +80,25 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
       >
         <h4>Editor</h4>
         <h6>Escribe tu respuesta dentro del Editor</h6>
-        <CodeEditor
-          codeType={problem.codeType}
-          files={files}
-          setHTMLCode={setHTMLCode}
-          setCssCodeS={setCssCode}
-          stateCssCode={cssCode}
-          stateHtmlCode={HTMLcode}
-        />
+        <div className="d-flex flex-column gap-2">
+          <CodeEditor
+            codeType={problem.codeType}
+            files={files}
+            setHTMLCode={setHTMLCode}
+            setCssCodeS={setCssCode}
+            stateCssCode={cssCode}
+            stateHtmlCode={HTMLcode}
+          />
+          <div className="d-flex justify-content-end me-2">
+            <button
+              id={color}
+              className="bg_excercises px-4 py-2 next_button"
+              onClick={() => handleTest(HTMLcode, problem.desiredHTMLCode)}
+            >
+              Ejecutar
+            </button>
+          </div>
+        </div>
       </div>
       <div
         style={{
@@ -87,7 +107,9 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
       >
         <h4>Resultado</h4>
         <h6>Resultado de la Ejecución - Renderizado</h6>
-        <Render contenidoHtml={HTMLcode} contenidoCss={cssCode} />
+        <div>
+          <Render contenidoHtml={HTMLcode} contenidoCss={cssCode} />
+        </div>
       </div>
     </Container>
   );

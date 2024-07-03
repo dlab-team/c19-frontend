@@ -28,7 +28,10 @@ const HtmlCssPage = async ({ params }: Props) => {
     <Container className="mt-5 d-flex flex-column gap-5  ">
       <HeaderExercise lenguaje={problem.codeType} id={params.id} />
       <Container>
-        <Enunciado text={problem && problem.enunciado} />
+        <Enunciado
+          enunciado={problem.enunciado}
+          descripcion={problem.descripcion}
+        />
       </Container>
       <ContainerCodeRender excerciseId={params.id} problem={problem} />
       <Advance actualStep={Number(params.id)} lenguaje={problem.codeType} />
