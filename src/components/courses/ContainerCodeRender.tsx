@@ -68,6 +68,28 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     color = "bg_excercises";
   }
 
+  const handleClick = (codetype: string): void => {
+    switch (codetype) {
+      case "html":
+        handleTest(HTMLcode, problem.desiredHTMLCode, "", "");
+        break;
+      case "html-css":
+        handleTest(
+          HTMLcode,
+          problem.desiredHTMLCode,
+          cssCode,
+          problem.desiredCSSCode,
+        );
+        break;
+      case "css":
+        handleTest("", "", cssCode, problem.desiredCSSCode);
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <Container
       fluid
@@ -93,7 +115,9 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
             <button
               id={color}
               className="bg_excercises px-4 py-2 next_button"
-              onClick={() => handleTest(HTMLcode, problem.desiredHTMLCode)}
+              onClick={() => {
+                handleClick(problem.codeType);
+              }}
             >
               Ejecutar
             </button>
