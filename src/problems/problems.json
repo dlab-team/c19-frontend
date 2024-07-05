@@ -105,11 +105,11 @@
                 "title": "HTML-CSS",
                 "codeType": "html-css",
                 "desiredHTMLCode": "<!-- Archivo 1. index.html -->\n<!DOCTYPE html>\n<html>\n<head>\n  <link rel='stylesheet' href='estilos.css'>\n</head>\n<body>\n  <!-- Escribe tu código aquí -->\n <p class='gris'>hola</p></body>\n</html>",
-                "desiredCSSCode": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/.gris{\n    color: #333333;\n}/* <--- fin */",
+                "desiredCSSCode": ".gris{\n    color: #808080 ;\n}",
                 "subtitle": "Agregar una propiedad y un valor a un CSS",
-                "enunciado": "1- Agrega al body la clase gris con la propiedad color con el valor #333333 dentro del archivo estilos.css  2- Agrega un párrafo con la clase gris dentro del HTML",
+                "enunciado": "1- Agrega un párrafo con la clase gris dentro del HTML. Debe tener el texto: Desafio Latam. 2.- En el CSS crea la clase 'gris' con la propiedad color con el valor #808080 o 'gray'",
                 "cssCode": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
-                "htmlCode": "<!-- Archivo 1. index.html -->\n<!DOCTYPE html>\n<html>\n<head>\n  <link rel='stylesheet' href='estilos.css'>\n</head>\n<body>\n  <!-- Escribe tu código aquí -->\n</body>\n</html>",
+                "htmlCode": "<!-- Archivo 1. index.html -->\n<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí -->\n</body>\n</html>",
                 "descripcion": "Para agregar una propiedad y valor a un archivo css existente, podemos hacerlo de la siguiente manera: <br /> /* estilos.css */ body {   background-color: lightblue; }"
             },
             {

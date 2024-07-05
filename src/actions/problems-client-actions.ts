@@ -1,7 +1,6 @@
 import * as cheerio from "cheerio";
 import { Element } from "cheerio";
 import Swal from "sweetalert2";
-import * as csstree from "css-tree";
 
 const compareElements = (
   $userElement: cheerio.Cheerio<Element>,
@@ -37,7 +36,7 @@ const compareElements = (
   return true;
 };
 
-const compareCSS = (userCSS: string, desiredCSS: string): boolean => {
+/* const compareCSS = (userCSS: string, desiredCSS: string): boolean => {
   const ast1 = csstree.parse(userCSS);
   const ast2 = csstree.parse(desiredCSS);
 
@@ -48,27 +47,45 @@ const compareCSS = (userCSS: string, desiredCSS: string): boolean => {
   // Comparar las cadenas CSS serializadas
   return serializedCss1 === serializedCss2;
 };
+ */
 
-const handleTest = (
+const handleTest = async (
   userHTMLCode: string,
   desiredHTMLCode: string,
   userCSSCode: string,
   desiredCSSCode: string,
-): undefined => {
+) => {
   const $userCode = cheerio.load(userHTMLCode);
   const $desiredCode = cheerio.load(desiredHTMLCode);
   const userHTMLElements = $userCode("body").find("*");
   const desiredHTMLElements = $desiredCode("body").find("*");
 
-  if (userCSSCode.trim().length > 0 && desiredCSSCode?.trim().length > 0) {
-    if (!compareCSS(userCSSCode, desiredCSSCode)) {
-      Swal.fire({
-        title: "Respuesta Incorrecta",
-        text: "Vuelve a intentarlo",
-        icon: "error",
-        confirmButtonText: "Ok",
+  if (userCSSCode.trim().length > 0 && desiredCSSCode.trim().length > 0) {
+    try {
+      const response = await fetch("/api/css", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ css1: userCSSCode, css2: desiredCSSCode }),
       });
-      return;
+
+      if (!response.ok) {
+        throw new Error("Error al optimizar CSS");
+      }
+
+      const data = await response.json();
+      if (!data.success) {
+        Swal.fire({
+          title: "Respuesta Incorrecta",
+          text: "Vuelve a intentarlo",
+          icon: "error",
+          confirmButtonText: "Ok",
+        });
+        return;
+      }
+    } catch (error) {
+      console.error("Error al llamar a la API:", error);
     }
   }
 

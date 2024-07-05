@@ -14,11 +14,14 @@
     "bootstrap": "^5.3.3",
     "cheerio": "^1.0.0-rc.12",
     "cookies-next": "^4.2.1",
-    "css-tree": "^2.3.1",
+    "cssnano": "^7.0.3",
     "dom-compare": "^0.6.0",
     "monaco-editor": "^0.48.0",
     "next": "14.2.3",
-    "parse5": "^7.1.2",
+    "postcss": "^8.4.39",
+    "postcss-custom-properties": "^13.3.11",
+    "postcss-js": "^4.0.1",
+    "postcss-preset-env": "^9.5.15",
     "react": "^18",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18",
@@ -37,6 +40,12 @@
     "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier": "5.0.1",
+    "postcss-cli": "^11.0.0",
+    "postcss-normalize": "^10.0.1",
     "prettier": "^3.3.1"
+  },
+  "browserslist": {
+    "browserslist": "last 2 versions"
   }
+  
 }

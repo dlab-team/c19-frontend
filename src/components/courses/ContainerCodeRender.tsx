@@ -68,13 +68,13 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     color = "bg_excercises";
   }
 
-  const handleClick = (codetype: string): void => {
+  const handleClick = async (codetype: string) => {
     switch (codetype) {
       case "html":
-        handleTest(HTMLcode, problem.desiredHTMLCode, "", "");
+        await handleTest(HTMLcode, problem.desiredHTMLCode, "", "");
         break;
       case "html-css":
-        handleTest(
+        await handleTest(
           HTMLcode,
           problem.desiredHTMLCode,
           cssCode,
@@ -82,7 +82,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
         );
         break;
       case "css":
-        handleTest("", "", cssCode, problem.desiredCSSCode);
+        await handleTest("", "", cssCode, problem.desiredCSSCode);
         break;
 
       default:
