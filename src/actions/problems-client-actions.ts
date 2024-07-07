@@ -36,19 +36,6 @@ const compareElements = (
   return true;
 };
 
-/* const compareCSS = (userCSS: string, desiredCSS: string): boolean => {
-  const ast1 = csstree.parse(userCSS);
-  const ast2 = csstree.parse(desiredCSS);
-
-  // Serializar los ASTs de vuelta a cadenas CSS para compararlas
-  const serializedCss1 = csstree.generate(ast1);
-  const serializedCss2 = csstree.generate(ast2);
-
-  // Comparar las cadenas CSS serializadas
-  return serializedCss1 === serializedCss2;
-};
- */
-
 const handleTest = async (
   userHTMLCode: string,
   desiredHTMLCode: string,
