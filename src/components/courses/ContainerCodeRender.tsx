@@ -6,7 +6,7 @@ import {
   getSolvedListCookie,
   setProdListCookie,
 } from "@/actions/cookies-client";
-import { Problem } from "@/interfaces/problems";
+import type { CssCode, Problem } from "@/interfaces/problems";
 import { handleTest } from "@/actions/problems-client-actions";
 
 interface Props {
@@ -27,7 +27,10 @@ export interface Files {
 export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   const cookieList = getSolvedListCookie();
 
-  const [cssCode, setCssCode] = useState("");
+  const [cssCode, setCssCode] = useState<CssCode>({
+    css1Code: "",
+    css2Code: "",
+  });
   const [HTMLcode, setHTMLCode] = useState("");
 
   useEffect(() => {
@@ -51,7 +54,12 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     "style.css": {
       name: "style.css",
       language: "css",
-      value: problem.cssCode,
+      value: problem.cssCode.css1Code,
+    },
+    "style2.css": {
+      name: "style2.css",
+      language: "css",
+      value: problem.cssCode.css2Code,
     },
     "index.html": {
       name: "index.html",
@@ -71,7 +79,12 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   const handleClick = async (codetype: string) => {
     switch (codetype) {
       case "html":
-        await handleTest(HTMLcode, problem.desiredHTMLCode, "", "");
+        await handleTest(
+          HTMLcode,
+          problem.desiredHTMLCode,
+          { css1Code: "", css2Code: "" },
+          "",
+        );
         break;
       case "html-css":
         await handleTest(
@@ -105,6 +118,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
         <div className="d-flex flex-column gap-2">
           <CodeEditor
             codeType={problem.codeType}
+            problemType={problem.type}
             files={files}
             setHTMLCode={setHTMLCode}
             setCssCodeS={setCssCode}
@@ -132,7 +146,10 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
         <h4>Resultado</h4>
         <h6>Resultado de la Ejecución - Renderizado</h6>
         <div>
-          <Render contenidoHtml={HTMLcode} contenidoCss={cssCode} />
+          <Render
+            contenidoHtml={HTMLcode}
+            contenidoCss={cssCode.css1Code + cssCode.css2Code}
+          />
         </div>
       </div>
     </Container>

@@ -1,3 +1,4 @@
+import type { CssCode } from "@/interfaces/problems";
 import * as cheerio from "cheerio";
 import { Element } from "cheerio";
 import Swal from "sweetalert2";
@@ -39,7 +40,7 @@ const compareElements = (
 const handleTest = async (
   userHTMLCode: string,
   desiredHTMLCode: string,
-  userCSSCode: string,
+  userCSSCode: CssCode,
   desiredCSSCode: string,
 ) => {
   const $userCode = cheerio.load(userHTMLCode);
@@ -47,14 +48,20 @@ const handleTest = async (
   const userHTMLElements = $userCode("body").find("*");
   const desiredHTMLElements = $desiredCode("body").find("*");
 
-  if (userCSSCode.trim().length > 0 && desiredCSSCode.trim().length > 0) {
+  if (
+    userCSSCode.css1Code.trim().length > 0 &&
+    desiredCSSCode.trim().length > 0
+  ) {
     try {
       const response = await fetch("/api/css", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ css1: userCSSCode, css2: desiredCSSCode }),
+        body: JSON.stringify({
+          userCss: userCSSCode.css1Code + userCSSCode.css2Code,
+          desiredCss: desiredCSSCode,
+        }),
       });
 
       if (!response.ok) {
