@@ -1,4 +1,3 @@
-// pages/api/optimize-css.js
 import { NextResponse } from "next/server";
 import postcss from "postcss";
 import postcssPresetEnv from "postcss-preset-env";
@@ -23,7 +22,6 @@ const processCSS = async (css: string) => {
 
   // Filtrar solo los nodos de tipo 'rule' y ordenarlos por el selector
   const rules = root.nodes.filter((node) => node.type === "rule");
-  console.log(rules[0].selector);
   rules.sort((a, b) => (a.selector > b.selector ? 1 : -1));
 
   // Reemplazar los nodos existentes por los nodos ordenados
@@ -44,8 +42,6 @@ export async function POST(req: Request) {
   try {
     const optimizedCSS1 = await processCSS(userCss);
     const optimizedCSS2 = await processCSS(desiredCss);
-    console.log(optimizedCSS1);
-    console.log(optimizedCSS2);
 
     if (optimizedCSS1 === optimizedCSS2) {
       return NextResponse.json({ success: true }, { status: 200 });
@@ -55,7 +51,7 @@ export async function POST(req: Request) {
     console.error("Error al optimizar CSS:", error);
     return NextResponse.json(
       { error: "Error interno al optimizar CSS" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

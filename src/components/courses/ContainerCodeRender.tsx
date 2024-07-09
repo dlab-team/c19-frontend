@@ -43,11 +43,11 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
       : problem.htmlCode;
     setCssCode(initialCssCode);
     setHTMLCode(initialHTMLcode);
-  }, [excerciseId]);
+  }, [excerciseId, problem]);
 
   useEffect(() => {
     const date = new Date();
-    setProdListCookie(Number(excerciseId), true, date, HTMLcode, cssCode);
+    setProdListCookie(Number(excerciseId), false, date, HTMLcode, cssCode);
   }, [excerciseId, HTMLcode, cssCode]);
 
   const files: Files = {
@@ -79,23 +79,48 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   const handleClick = async (codetype: string) => {
     switch (codetype) {
       case "html":
-        await handleTest(
-          HTMLcode,
-          problem.desiredHTMLCode,
-          { css1Code: "", css2Code: "" },
-          "",
-        );
+        if (
+          await handleTest(
+            HTMLcode,
+            problem.desiredHTMLCode,
+            { css1Code: "", css2Code: "" },
+            "",
+          )
+        )
+          setProdListCookie(
+            Number(excerciseId),
+            true,
+            new Date(),
+            HTMLcode,
+            cssCode,
+          );
         break;
       case "html-css":
-        await handleTest(
-          HTMLcode,
-          problem.desiredHTMLCode,
-          cssCode,
-          problem.desiredCSSCode,
-        );
+        if (
+          await handleTest(
+            HTMLcode,
+            problem.desiredHTMLCode,
+            cssCode,
+            problem.desiredCSSCode,
+          )
+        )
+          setProdListCookie(
+            Number(excerciseId),
+            true,
+            new Date(),
+            HTMLcode,
+            cssCode,
+          );
         break;
       case "css":
-        await handleTest("", "", cssCode, problem.desiredCSSCode);
+        if (await handleTest("", "", cssCode, problem.desiredCSSCode))
+          setProdListCookie(
+            Number(excerciseId),
+            true,
+            new Date(),
+            HTMLcode,
+            cssCode,
+          );
         break;
 
       default:

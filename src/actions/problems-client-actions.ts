@@ -42,7 +42,7 @@ const handleTest = async (
   desiredHTMLCode: string,
   userCSSCode: CssCode,
   desiredCSSCode: string,
-) => {
+): Promise<boolean> => {
   const $userCode = cheerio.load(userHTMLCode);
   const $desiredCode = cheerio.load(desiredHTMLCode);
   const userHTMLElements = $userCode("body").find("*");
@@ -76,7 +76,7 @@ const handleTest = async (
           icon: "error",
           confirmButtonText: "Ok",
         });
-        return;
+        return false;
       }
     } catch (error) {
       console.error("Error al llamar a la API:", error);
@@ -90,7 +90,7 @@ const handleTest = async (
       icon: "error",
       confirmButtonText: "Ok",
     });
-    return;
+    return false;
   }
 
   for (let i = 0; i < userHTMLElements.length; i++) {
@@ -104,7 +104,7 @@ const handleTest = async (
         icon: "error",
         confirmButtonText: "Ok",
       });
-      return;
+      return false;
     }
   }
 
@@ -114,6 +114,7 @@ const handleTest = async (
     icon: "success",
     confirmButtonText: "Ok",
   });
+  return true;
 };
 
 export { handleTest };

@@ -6,7 +6,7 @@
                 "title": "HTML",
                 "subtitle": "Etiquetas",
                 "codeType": "html",
-                "enunciado": "Crea un link a desafiolatam.com que diga 'Ir a Desafío Latam'.",
+                "enunciado": "Crea un link a www.desafiolatam.com que diga 'Ir a Desafío Latam'.",
                 "descripcion": "Para crear un link a otro sitio se debe usar la etiqueta <a> y el atributo href que indica la dirección a la que se redirigirá al usuario al hacer click en el link.\n Ejemplo: <a href='https://www.google.com'>Ir a Google</a> \n",
                 "cssCode": {
                     "css1Code": ".rojo{\n    color: red;\n}\n.azul{\n    color: blue;\n}\n.verde{\n    color: green;\n}\n.container{\n    display: flex;\n    justify-content: space-between;\n    padding: 3rem;\n}\n.body{\n    box-sizing: border-box;\n}",
