@@ -36,13 +36,47 @@ const compareElements = (
   return true;
 };
 
-const handleTest = (userCode: string, desiredCode: string) => {
-  const $userCode = cheerio.load(userCode);
-  const $desiredCode = cheerio.load(desiredCode);
-  const userElements = $userCode("body").find("*");
-  const desiredElements = $desiredCode("body").find("*");
+const handleTest = async (
+  userHTMLCode: string,
+  desiredHTMLCode: string,
+  userCSSCode: string,
+  desiredCSSCode: string,
+) => {
+  const $userCode = cheerio.load(userHTMLCode);
+  const $desiredCode = cheerio.load(desiredHTMLCode);
+  const userHTMLElements = $userCode("body").find("*");
+  const desiredHTMLElements = $desiredCode("body").find("*");
 
-  if (userElements.length !== desiredElements.length) {
+  if (userCSSCode.trim().length > 0 && desiredCSSCode.trim().length > 0) {
+    try {
+      const response = await fetch("/api/css", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ css1: userCSSCode, css2: desiredCSSCode }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al optimizar CSS");
+      }
+
+      const data = await response.json();
+      if (!data.success) {
+        Swal.fire({
+          title: "Respuesta Incorrecta",
+          text: "Vuelve a intentarlo",
+          icon: "error",
+          confirmButtonText: "Ok",
+        });
+        return;
+      }
+    } catch (error) {
+      console.error("Error al llamar a la API:", error);
+    }
+  }
+
+  if (userHTMLElements.length !== desiredHTMLElements.length) {
     Swal.fire({
       title: "Respuesta Incorrecta",
       text: "Vuelve a intentarlo",
@@ -52,9 +86,9 @@ const handleTest = (userCode: string, desiredCode: string) => {
     return;
   }
 
-  for (let i = 0; i < userElements.length; i++) {
-    const $userElement = $userCode(userElements[i]);
-    const $desiredElement = $desiredCode(desiredElements[i]);
+  for (let i = 0; i < userHTMLElements.length; i++) {
+    const $userElement = $userCode(userHTMLElements[i]);
+    const $desiredElement = $desiredCode(desiredHTMLElements[i]);
 
     if (!compareElements($userElement, $desiredElement)) {
       Swal.fire({

@@ -1,5 +1,6 @@
 interface Problem {
   id: number;
+  type: number;
   title: string;
   subtitle: string;
   codeType: string;
