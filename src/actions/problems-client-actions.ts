@@ -1,53 +1,19 @@
 import type { CssCode } from "@/interfaces/problems";
-import * as cheerio from "cheerio";
-import { Element } from "cheerio";
-import Swal from "sweetalert2";
+import { setProdListCookie } from "./cookies-client";
 
-const compareElements = (
-  $userElement: cheerio.Cheerio<Element>,
-  $desiredElement: cheerio.Cheerio<Element>,
-) => {
-  // Compara el nombre de las etiquetas
-  if ($userElement[0].tagName !== $desiredElement[0].tagName) {
-    return false;
-  }
-
-  // Compara el texto contenido en las etiquetas
-  if ($userElement.text().trim() !== $desiredElement.text().trim()) {
-    return false;
-  }
-
-  // Compara los atributos de las etiquetas
-  const userAttributes = $userElement[0].attribs;
-  const desiredAttributes = $desiredElement[0].attribs;
-
-  const userAttrKeys = Object.keys(userAttributes);
-  const desiredAttrKeys = Object.keys(desiredAttributes);
-
-  if (userAttrKeys.length !== desiredAttrKeys.length) {
-    return false;
-  }
-
-  for (const key of userAttrKeys) {
-    if (userAttributes[key] !== desiredAttributes[key]) {
-      return false;
-    }
-  }
-
-  return true;
-};
+export interface Response {
+  success: boolean;
+  response: string;
+}
 
 const handleTest = async (
   userHTMLCode: string,
   desiredHTMLCode: string,
   userCSSCode: CssCode,
   desiredCSSCode: string,
-): Promise<boolean> => {
-  const $userCode = cheerio.load(userHTMLCode);
-  const $desiredCode = cheerio.load(desiredHTMLCode);
-  const userHTMLElements = $userCode("body").find("*");
-  const desiredHTMLElements = $desiredCode("body").find("*");
-
+  excerciseId: number,
+): Promise<Response> => {
+  //Comparar CSS
   if (
     userCSSCode.css1Code.trim().length > 0 &&
     desiredCSSCode.trim().length > 0
@@ -70,51 +36,52 @@ const handleTest = async (
 
       const data = await response.json();
       if (!data.success) {
-        Swal.fire({
-          title: "Respuesta Incorrecta",
-          text: "Vuelve a intentarlo",
-          icon: "error",
-          confirmButtonText: "Ok",
-        });
-        return false;
+        return {
+          success: false,
+          response: "no success",
+        };
       }
     } catch (error) {
       console.error("Error al llamar a la API:", error);
     }
   }
+  // fin comparar CSS
 
-  if (userHTMLElements.length !== desiredHTMLElements.length) {
-    Swal.fire({
-      title: "Respuesta Incorrecta",
-      text: "Vuelve a intentarlo",
-      icon: "error",
-      confirmButtonText: "Ok",
+  try {
+    const response = await fetch("/api/html", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userHtml: userHTMLCode,
+        desiredHtml: desiredHTMLCode,
+      }),
     });
-    return false;
-  }
 
-  for (let i = 0; i < userHTMLElements.length; i++) {
-    const $userElement = $userCode(userHTMLElements[i]);
-    const $desiredElement = $desiredCode(desiredHTMLElements[i]);
-
-    if (!compareElements($userElement, $desiredElement)) {
-      Swal.fire({
-        title: "Respuesta Incorrecta",
-        text: "Vuelve a intentarlo",
-        icon: "error",
-        confirmButtonText: "Ok",
-      });
-      return false;
+    const data = await response.json();
+    console.log(data);
+    if (!data.areEqual) {
+      return {
+        success: false,
+        response: data.tips.BOT,
+      };
     }
+  } catch (error) {
+    console.log(error);
   }
+  setProdListCookie(
+    Number(excerciseId),
+    true,
+    new Date(),
+    userHTMLCode,
+    userCSSCode,
+  );
 
-  Swal.fire({
-    title: "Respuesta Correcta",
-    text: "Estas haciendo un buen trabajo",
-    icon: "success",
-    confirmButtonText: "Ok",
-  });
-  return true;
+  return {
+    success: true,
+    response: "success",
+  };
 };
 
 export { handleTest };
