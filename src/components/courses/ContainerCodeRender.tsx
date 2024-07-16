@@ -8,6 +8,8 @@ import {
 } from "@/actions/cookies-client";
 import type { CssCode, Problem } from "@/interfaces/problems";
 import { handleTest } from "@/actions/problems-client-actions";
+import IAMessage from "../ia/IAMessage";
+import type { Response } from "@/actions/problems-client-actions";
 
 interface Props {
   excerciseId: number;
@@ -32,6 +34,8 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     css2Code: "",
   });
   const [HTMLcode, setHTMLCode] = useState("");
+  const [iaRes, setIaRes] = useState<Response>({ success: true, response: "" });
+  const [solved, setSolved] = useState(false);
 
   useEffect(() => {
     // Inicializa los estados con los valores de las cookies o con los valores iniciales del problema
@@ -41,14 +45,19 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     const initialHTMLcode = cookieList[excerciseId]
       ? cookieList[excerciseId].html
       : problem.htmlCode;
+    const initialSolved = cookieList[excerciseId]
+      ? cookieList[excerciseId].solved
+      : false;
+
     setCssCode(initialCssCode);
     setHTMLCode(initialHTMLcode);
+    setSolved(initialSolved);
   }, [excerciseId, problem]);
 
   useEffect(() => {
     const date = new Date();
-    setProdListCookie(Number(excerciseId), false, date, HTMLcode, cssCode);
-  }, [excerciseId, HTMLcode, cssCode]);
+    setProdListCookie(Number(excerciseId), solved, date, HTMLcode, cssCode);
+  }, [excerciseId, HTMLcode, cssCode, solved]);
 
   const files: Files = {
     "style.css": {
@@ -76,107 +85,75 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     color = "bg_excercises";
   }
 
-  const handleClick = async (codetype: string) => {
-    switch (codetype) {
-      case "html":
-        if (
-          await handleTest(
-            HTMLcode,
-            problem.desiredHTMLCode,
-            { css1Code: "", css2Code: "" },
-            "",
-          )
-        )
-          setProdListCookie(
-            Number(excerciseId),
-            true,
-            new Date(),
-            HTMLcode,
-            cssCode,
-          );
-        break;
-      case "html-css":
-        if (
-          await handleTest(
-            HTMLcode,
-            problem.desiredHTMLCode,
-            cssCode,
-            problem.desiredCSSCode,
-          )
-        )
-          setProdListCookie(
-            Number(excerciseId),
-            true,
-            new Date(),
-            HTMLcode,
-            cssCode,
-          );
-        break;
-      case "css":
-        if (await handleTest("", "", cssCode, problem.desiredCSSCode))
-          setProdListCookie(
-            Number(excerciseId),
-            true,
-            new Date(),
-            HTMLcode,
-            cssCode,
-          );
-        break;
+  const handleClick = async () => {
+    const res = await handleTest(
+      HTMLcode,
+      problem.desiredHTMLCode,
+      cssCode,
+      problem.desiredCSSCode,
+      Number(excerciseId),
+    );
 
-      default:
-        break;
+    setIaRes(res);
+    if (res.success) {
+      setSolved(true);
+    } else {
+      setSolved(false);
     }
   };
 
   return (
-    <Container
-      fluid
-      className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3"
-    >
-      <div
-        style={{
-          width: "40vw",
-        }}
+    <>
+      <Container
+        fluid
+        className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3"
       >
-        <h4>Editor</h4>
-        <h6>Escribe tu respuesta dentro del Editor</h6>
-        <div className="d-flex flex-column gap-2">
-          <CodeEditor
-            codeType={problem.codeType}
-            problemType={problem.type}
-            files={files}
-            setHTMLCode={setHTMLCode}
-            setCssCodeS={setCssCode}
-            stateCssCode={cssCode}
-            stateHtmlCode={HTMLcode}
-          />
-          <div className="d-flex justify-content-end me-2">
-            <button
-              id={color}
-              className="bg_excercises px-4 py-2 next_button"
-              onClick={() => {
-                handleClick(problem.codeType);
-              }}
-            >
-              Ejecutar
-            </button>
+        <div
+          style={{
+            width: "40vw",
+          }}
+        >
+          <h4>Editor</h4>
+          <h6>Escribe tu respuesta dentro del Editor</h6>
+          <div className="d-flex flex-column gap-2">
+            <CodeEditor
+              codeType={problem.codeType}
+              problemType={problem.type}
+              files={files}
+              setHTMLCode={setHTMLCode}
+              setCssCodeS={setCssCode}
+              stateCssCode={cssCode}
+              stateHtmlCode={HTMLcode}
+            />
+            <div className="d-flex justify-content-end me-2">
+              <button
+                id={color}
+                className="bg_excercises px-4 py-2 next_button"
+                onClick={() => {
+                  handleClick();
+                }}
+              >
+                Ejecutar
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        style={{
-          width: "40vw",
-        }}
-      >
-        <h4>Resultado</h4>
-        <h6>Resultado de la Ejecución - Renderizado</h6>
-        <div>
-          <Render
-            contenidoHtml={HTMLcode}
-            contenidoCss={cssCode.css1Code + cssCode.css2Code}
-          />
+        <div
+          style={{
+            width: "40vw",
+          }}
+        >
+          <h4>Resultado</h4>
+          <h6>Resultado de la Ejecución - Renderizado</h6>
+          <div>
+            <Render
+              contenidoHtml={HTMLcode}
+              contenidoCss={cssCode.css1Code + cssCode.css2Code}
+            />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+      <IAMessage response={iaRes} />
+    </>
   );
 };

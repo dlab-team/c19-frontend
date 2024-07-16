@@ -153,7 +153,7 @@
                 "type": 3,
                 "title": "HTML-CSS",
                 "codeType": "html-css",
-                "desiredHTMLCode": "<head>\n<!-- Escribe tu código aquí-->\n<link href='div-styles.css' rel='stylesheet' type='text/css'>\n<link href='background-styles.css' rel='stylesheet' type='text/css'>\n</head>\n<body class='grey'>\n  <!-- Escribe tu código aquí-->\n<div class='red'></div>\n<div class='blue'></div>\n</body>\n</html>",
+                "desiredHTMLCode": "<html><head>\n<!-- Escribe tu código aquí-->\n<link href='div-styles.css' rel='stylesheet' type='text/css'>\n<link href='background-styles.css' rel='stylesheet' type='text/css'>\n</head>\n<body class='grey'>\n  <!-- Escribe tu código aquí-->\n<div class='red'></div>\n<div class='blue'></div>\n</body>\n</html>",
                 "desiredCSSCode": ".red{    width: 100px;    height: 100px;    background-color: red} .blue{width: 100px;height: 100px;background-color: blue;} .grey{background-color: grey;}",
                 "subtitle": "Agregar Archivos CSS",
                 "enunciado": "Instrucciones: Crear un archivo HTML: Nombre del archivo: index.html Contenido del archivo: Estructura básica de HTML con dos divs. Crear dos archivos CSS: div-styles.css: Para especificar el color de los divs. background-styles.css: Para especificar el color de fondo de la página. Vincular las hojas de estilo en el archivo HTML. Resultado Esperado: Al abrir el archivo index.html en un navegador, deberías ver dos divs de 100px por 100px. El primer div debe tener un fondo rojo y el segundo div debe tener un fondo azul. El fondo de toda la página debe ser de color gris claro.",

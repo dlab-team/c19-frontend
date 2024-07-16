@@ -192,6 +192,18 @@ footer{
   font-weight: bold;
   padding: 0.3rem;
 }
+
+.iabubble{
+  background-image: url("/iabubble.png");
+  background-repeat: no-repeat;
+  min-height: 142px;
+  width: 707px;;
+  padding: 10px;
+
+}
+.iabubble-message{
+  max-width: 85%;
+}
 /*--------------------Estilos Personalizados del footer-----*/
 .social-link:hover {
   transform: scale(1.2);
