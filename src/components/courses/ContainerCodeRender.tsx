@@ -1,14 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { CodeEditor, Render } from "@/components";
+import { CodeEditor, Render, IAMessage } from "@/components";
 import {
   getSolvedListCookie,
   setProdListCookie,
 } from "@/actions/cookies-client";
 import type { CssCode, Problem } from "@/interfaces/problems";
 import { handleTest } from "@/actions/problems-client-actions";
-import IAMessage from "../ia/IAMessage";
 import type { Response } from "@/actions/problems-client-actions";
 
 interface Props {
@@ -36,6 +35,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   const [HTMLcode, setHTMLCode] = useState("");
   const [iaRes, setIaRes] = useState<Response>({ success: true, response: "" });
   const [solved, setSolved] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Inicializa los estados con los valores de las cookies o con los valores iniciales del problema
@@ -86,6 +86,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   }
 
   const handleClick = async () => {
+    setIsLoading(true);
     const res = await handleTest(
       HTMLcode,
       problem.desiredHTMLCode,
@@ -95,6 +96,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     );
 
     setIaRes(res);
+    setIsLoading(false);
     if (res.success) {
       setSolved(true);
     } else {
@@ -153,7 +155,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
           </div>
         </div>
       </Container>
-      <IAMessage response={iaRes} />
+      <IAMessage response={iaRes} isLoading={isLoading} />
     </>
   );
 };

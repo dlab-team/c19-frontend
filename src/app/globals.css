@@ -194,15 +194,29 @@ footer{
 }
 
 .iabubble{
-  background-image: url("/iabubble.png");
+ border: solid 1px;
+ border-radius: 10px 0 10px 10px;
   background-repeat: no-repeat;
   min-height: 142px;
-  width: 707px;;
+  width: 707px;
   padding: 10px;
 
 }
+.border-success{
+  border-color: green;
+}
+.border-failure{
+  border-color: red;
+}
 .iabubble-message{
   max-width: 85%;
+}
+.spinner-container{
+  width: 707px;
+  height: 142px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /*--------------------Estilos Personalizados del footer-----*/
 .social-link:hover {

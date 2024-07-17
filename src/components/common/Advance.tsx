@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useRouter } from "next/navigation";
 import { Container } from "react-bootstrap";
 import { Discord } from "./Discord";

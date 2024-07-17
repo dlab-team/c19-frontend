@@ -1,3 +1,4 @@
+export { IAMessage } from "./ia/IAMessage";
 export { ContainerCodeRender } from "./courses/ContainerCodeRender";
 export { Advance } from "./common/Advance";
 export { Discord } from "./common/Discord";

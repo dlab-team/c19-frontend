@@ -64,7 +64,7 @@ const handleTest = async (
     if (!data.areEqual) {
       return {
         success: false,
-        response: data.tips.BOT,
+        response: data.tips.result,
       };
     }
   } catch (error) {
@@ -80,7 +80,7 @@ const handleTest = async (
 
   return {
     success: true,
-    response: "success",
+    response: "Estas realizando un buen trabajo",
   };
 };
 
