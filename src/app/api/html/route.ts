@@ -4,8 +4,8 @@ import { compare } from "dom-compare";
 
 const askAI = async (differences: string[]) => {
   const difss = differences.join(" - ");
-  const input = `give me one tip of maximum 100 characters, to UNDERSTAND my code according to next message, don't give the answer how to solve it, just give a general tip on where should i look for the problem, the message contains several problems in my code separated by-: ${difss}. `;
-  //const input = "hi";
+  const input = `dame un consejo de máximo 100 caracteres, para ENTENDER mi código HTML/CSS según el siguiente mensaje, no des la respuesta de cómo solucionarlo, solo da un consejo general sobre dónde debo buscar el problema, el mensaje contiene varios problemas en mi código separados por-: ${difss}. El usuario que leera estos tips no sabe cuales son los errores que te envio `;
+  const url = "https://open-ai21.p.rapidapi.com/chatgpt";
   const options = {
     method: "POST",
     headers: {
@@ -24,10 +24,7 @@ const askAI = async (differences: string[]) => {
   };
 
   try {
-    const result = await fetch(
-      "https://open-ai21.p.rapidapi.com/conversationpalm2",
-      options,
-    );
+    const result = await fetch(url, options);
     return await result.json();
   } catch (error) {
     console.error("Error fetching data from OpenAI API", error);
