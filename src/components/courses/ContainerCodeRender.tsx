@@ -108,7 +108,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     <>
       <Container
         fluid
-        className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3"
+        className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3 position-relative"
       >
         <div
           style={{
@@ -155,6 +155,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
           </div>
         </div>
       </Container>
+
       <IAMessage response={iaRes} isLoading={isLoading} />
     </>
   );

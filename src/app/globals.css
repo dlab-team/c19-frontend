@@ -196,11 +196,17 @@ footer{
 .iabubble{
  border: solid 1px;
  border-radius: 10px 0 10px 10px;
-  background-repeat: no-repeat;
+background: #fff;
   min-height: 142px;
   width: 707px;
   padding: 10px;
 
+}
+* {
+  user-select: none;
+}
+.close-button:hover{
+  cursor: pointer;
 }
 .border-success{
   border-color: green;

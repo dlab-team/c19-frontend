@@ -60,7 +60,7 @@ const handleTest = async (
     });
 
     const data = await response.json();
-    console.log(data);
+
     if (!data.areEqual) {
       return {
         success: false,

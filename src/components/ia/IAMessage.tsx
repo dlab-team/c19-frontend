@@ -4,7 +4,7 @@ import { getPhrase } from "@/helpers/random-phrases";
 import Image from "next/image";
 import React, { useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import Draggable from "react-draggable";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import { motion } from "react-magic-motion";
 
 interface Props {
@@ -17,12 +17,21 @@ export const IAMessage = ({ response, isLoading }: Props) => {
   const [customText, setCustomText] = useState("");
 
   const handleClick = () => {
-    setShowDiv(true);
+    setShowDiv(!showDiv);
     setCustomText(getPhrase());
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-start">
+    <div
+      className="d-flex justify-content-center align-items-start "
+      style={{
+        position: "fixed",
+        bottom: 50,
+        left: 0,
+        width: "100%",
+        zIndex: 1000,
+      }}
+    >
       {response.response && !isLoading ? (
         <motion.div
           className={`iabubble ${response.success ? "border-success" : "border-failure"}`}
@@ -76,16 +85,25 @@ export const IAMessage = ({ response, isLoading }: Props) => {
                   duration: 2,
                 }}
               >
-                <div className="d-flex align-items-center gap-2">
-                  <Image
-                    src={`${!response.success ? "/mad_robot.png" : "/happy_robot.png"}`}
-                    alt={"iaIcon"}
-                    width={50}
-                    height={50}
-                    onClick={handleClick}
-                    style={{ cursor: "pointer" }}
-                  />
-                  <h4>¡Hola!</h4>
+                <div className="d-flex justify-content-between">
+                  <div className="d-flex align-items-center gap-2">
+                    <Image
+                      src={`${!response.success ? "/mad_robot.png" : "/happy_robot.png"}`}
+                      alt={"iaIcon"}
+                      width={50}
+                      height={50}
+                      onClick={handleClick}
+                      style={{ cursor: "pointer" }}
+                    />
+                    <h4>¡Hola!</h4>
+                  </div>
+                  <div>
+                    <IoIosCloseCircleOutline
+                      size={35}
+                      className="close-button"
+                      onClick={() => setShowDiv(!showDiv)}
+                    />
+                  </div>
                 </div>
                 <h6 className="iabubble-message pt-2">{customText}</h6>
               </motion.div>
@@ -93,16 +111,15 @@ export const IAMessage = ({ response, isLoading }: Props) => {
           </div>
         </>
       )}
-      <Draggable>
-        <Image
-          src={"/iaIcon.png"}
-          alt={"iaIcon"}
-          width={100}
-          height={100}
-          onClick={handleClick}
-          style={{ cursor: "pointer" }}
-        />
-      </Draggable>
+
+      <Image
+        src={"/iaIcon.png"}
+        alt={"iaIcon"}
+        width={100}
+        height={100}
+        onClick={handleClick}
+        style={{ cursor: "pointer" }}
+      />
     </div>
   );
 };

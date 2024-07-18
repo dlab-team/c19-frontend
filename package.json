@@ -26,7 +26,6 @@
     "react": "^18",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18",
-    "react-draggable": "^4.4.6",
     "react-icons": "^5.2.1",
     "react-magic-motion": "^1.1.2",
     "sharp": "^0.33.4",
