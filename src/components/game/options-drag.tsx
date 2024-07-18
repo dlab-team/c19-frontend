@@ -6,17 +6,13 @@ interface Props{
 }
 
 export default function Options ({option}:Props) {
-    function handleDrag(ev){
+    function handleDrag(ev:React.DragEvent<HTMLDivElement>){
         //metodo q establece tipo de dato y valor arrastrado
         //el dato y el valor que son arrastrado
-        ev.dataTransfer.setData("text",ev.target.id);
+        ev.dataTransfer.setData("text",ev.currentTarget.id);
       }
-    /*var array = ""
-    for (let index = 0; index < number; index++) {
-        array = array + `<div id=${option[index]}>${option[index]}</div>`;    
-    }*/
     const todoItems = option.map((todo, index) =>
-        <div draggable="true" onDragStart={handleDrag} id={todo} key={index} className="card-options">
+        <div draggable="true" onDragStart={handleDrag} id={todo} key={`items-${index}`} className="card-options">
           {todo}
         </div>
       );

@@ -1,9 +1,9 @@
 "use client";
 import Gameselect from "@/components/game/drop-select";
 
-var listOptions = ["loro","perro","gato","zorro","tortuga"];
-var listCorrect = ["loro","gato","zorro"];
-var listayuda = ["loro","gato","zorro"];
+var listOptions = ['backgroundColor:"red";','backgroundColor:"red"','backgroundColor:"yellow;"','border:"4px block-end-width"','border:"4px solid blue;"','border:"4px solid blue"'];
+var listCorrect = ['backgroundColor:"red";','border:"4px solid blue;"'];
+var listayuda = ["/*color rojo*/","/*borde azul 4px*/"];
 var figura = <div style={{width:"100px",height:"100px",backgroundColor:"red", border:"4px solid blue"}}></div>;
 var codigo = '.square{<br>width:"100px";<br>height:"100px";'
 
@@ -18,7 +18,7 @@ export default function Home() {
             <center><h3 className="title-card">Figura</h3></center>
             <center>{figura}</center>
           </div>
-          <Gameselect option={listOptions} numberSelect={3} correctOption={listCorrect} ayuda={listayuda} muestraCodigo={codigo}/>
+          <Gameselect option={listOptions} numberSelect={listCorrect.length} correctOption={listCorrect} ayuda={listayuda} muestraCodigo={codigo}/>
         </div>
       );
     }
