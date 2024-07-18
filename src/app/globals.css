@@ -243,7 +243,78 @@ footer{
   
 }
 
-
+/*estilos de game*/
+.title-card{
+  position:relative;
+  margin-top: -10px;
+  border-radius: 10px;
+  background-color: #da650b;
+  border: 2px solid lightskyblue;
+  color: #000;
+  text-wrap: nowrap;
+  width: min-content;
+  padding: 0 5px;
+}
+.grid-game{
+  background-color: #749B28;
+  border: 1px solid black;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  gap: 1/2em;
+  grid-template-rows: minmax(200px);
+  margin: 30px;
+}
+.enunciado{
+  grid-column: 1/3;
+  grid-row: 1/4;
+  background-color: aquamarine;
+  margin: 10px;
+  border-radius: 25px;
+  text-align: center;
+  border: 2px solid lightskyblue;
+}
+.figura{
+  grid-column: 1/2;
+  grid-row: 4/5;
+  background-color: aquamarine;
+  margin: 10px;
+  border-radius: 25px;
+  border: 2px solid lightskyblue;
+}
+.ejercicios{
+  background-color: aqua;
+}
+.options{
+  border: 2px solid lightskyblue;
+  grid-column: 2/3;
+  grid-row: 4/5;
+  margin: 10px;
+  border-radius: 25px;
+}
+.card-options{
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: transparent;
+  width: 180px;
+  height: 29px;
+}
+.select{
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 200px;
+  height: 30px;
+}
+.contenedor{
+  grid-column: 3/5;
+  grid-row: 1/5;
+  margin: 10px;
+  border-radius: 25px;
+  background-color: #38353f;
+  border: 2px solid lightskyblue;
+  color:#da650b;
+}
 
 
 @media (prefers-color-scheme: dark) {
