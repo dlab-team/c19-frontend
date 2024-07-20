@@ -21,9 +21,6 @@ export const Render = ({ contenidoHtml, contenidoCss }: Props) => {
       style={{
         height: "29rem",
         width: "100%",
-        border: "1px solid black",
-        boxShadow: "3px 3px 5px #444",
-        borderRadius: "0 0 5px 5px",
         padding: "0",
       }}
     >
@@ -31,9 +28,11 @@ export const Render = ({ contenidoHtml, contenidoCss }: Props) => {
         title="Render"
         srcDoc={contenido}
         style={{
+          padding:"10px",
+          borderRadius: "20px",
           height: "100%",
           width: "100%",
-          background: "#FFFFFF",
+          background: "#585757",
         }}
       ></iframe>
     </Container>

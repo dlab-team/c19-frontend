@@ -1,29 +1,33 @@
+import  subtitle  from "@/problems/problems.json";
 import React from "react";
 import { Container } from "react-bootstrap";
 
 interface Props {
   lenguaje: string;
   id: number;
+  subtitle: string;
 }
 
-export default function HeaderExercise({ lenguaje, id }: Props) {
+
+export default function HeaderExercise({ lenguaje, id, subtitle }: Props) {
   let color = "";
   if (lenguaje == "html") {
-    color = "bg_excercises_html";
+    color = "color_excercises_html";
   } else if (lenguaje == "css") {
-    color = "bg_excercises_css";
+    color = "color_excercises_css";
   } else {
-    color = "bg_excercises";
+    color = "color_excercises";
   }
   return (
     <Container
-      id={color}
-      className="rounded d-flex justify-content-center align-items-center gap-3"
+    className="bg-white d-flex pt-2 justify-content-center align-items-center gap-3"
     >
-      <h2 className="py-5 fw-bold fs-1">
-        Ejercicios <span className="text-uppercase">{lenguaje}</span>
+      <h2 className="py-1 fw-bold "
+        id={color}>
+          {subtitle}
       </h2>
-      <h6 className="bg-light text-dark rounded p-2"> {id}/20</h6>{" "}
+      <h2 className="contador"> 
+        {id}/20</h2>{" "}
     </Container>
   );
 }

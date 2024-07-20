@@ -7,9 +7,11 @@ const CoursesLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
+    <div className="body-color">
     <div className="d-flex">
       <Sidebar />
       {children}
+    </div>
     </div>
   );
 };
