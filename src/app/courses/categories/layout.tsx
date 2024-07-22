@@ -7,8 +7,8 @@ const CoursesLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className="body-color">
-      <div className="d-flex">
+    <div className="body-color bg-light-gray d-flex justify-content-center align-items-center">
+      <div className="d-flex bg-white">
         <Sidebar />
         {children}
       </div>
