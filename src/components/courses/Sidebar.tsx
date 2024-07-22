@@ -1,22 +1,31 @@
+"use client";
 import React from "react";
 import SidebarMenuItem from "./SidebarMenuItem";
+import Accordion from "react-bootstrap/Accordion";
+import AccordionHeader from "react-bootstrap/AccordionHeader";
+import Link from "next/link";
 
 const menuItems = [
   {
     path: "/courses/categories/css",
-    title: "CSS",
+    title: "css",
     key: 1,
   },
   {
     path: "/courses/categories/html",
-    title: "HTML",
+    title: "html",
     key: 2,
   },
   {
     path: "/courses/categories/html-css",
-    title: "HTML-CSS",
+    title: "html-css",
     key: 3,
   },
+  /*  {
+    path: "/courses/categories/game",
+    title: "juego",
+    key: 3,
+  }, */
 ];
 
 const Sidebar = () => {
@@ -24,17 +33,31 @@ const Sidebar = () => {
     <>
       <div
         className="d-flex flex-column bg-gray p-4 m-5 mx-4 rounded-2 gap-3"
-        style={{ minWidth: "19rem" }}
+        style={{ minWidth: "20rem", minHeight: "110vh" }}
       >
         <h3 className="mb-4 fw-bold">Categorías &gt;</h3>
-        {menuItems.map((item) => (
-          <SidebarMenuItem
-            key={item.path}
-            nbr={item.key}
-            path={item.path}
-            title={item.title}
-          />
-        ))}
+        <Accordion style={{ minWidth: "16rem" }} defaultActiveKey={["0"]}>
+          {menuItems.map((item, index) => (
+            <Accordion.Item key={item.path} eventKey={index.toString()}>
+              <Link
+                href={item.path}
+                className={`text-decoration-none text-dark rounded-1`}
+              >
+                <AccordionHeader bsPrefix="red" className="red">
+                  {item.key}.- {item.title.toUpperCase()}
+                </AccordionHeader>
+              </Link>
+
+              <Accordion.Body>
+                <SidebarMenuItem
+                  key={item.path}
+                  path={item.path}
+                  title={item.title}
+                />
+              </Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
       </div>
     </>
   );

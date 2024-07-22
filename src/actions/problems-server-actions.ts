@@ -19,4 +19,17 @@ async function filterExercisesById(
   return {};
 }
 
-export { filterExercisesById };
+async function filterExcercisesBySubType(subType: string): Promise<Problem[]> {
+  const slug = subType
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+  const allExercises = Object.values(problems).flat();
+  const filteredExercises = allExercises.filter(
+    (exercise: Problem) => exercise.codeSubType === slug,
+  );
+
+  return filteredExercises.length ? filteredExercises : [];
+}
+
+export { filterExercisesById, filterExcercisesBySubType };
