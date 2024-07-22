@@ -4,6 +4,7 @@ interface Problem {
   title: string;
   subtitle: string;
   codeType: string;
+  codeSubType: string;
   enunciado: string;
   descripcion: string;
   cssCode: CssCode;

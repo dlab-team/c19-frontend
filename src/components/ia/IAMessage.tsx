@@ -4,7 +4,7 @@ import { getPhrase } from "@/helpers/random-phrases";
 import Image from "next/image";
 import React, { useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+
 import { motion } from "react-magic-motion";
 
 interface Props {
