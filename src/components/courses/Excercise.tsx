@@ -33,7 +33,7 @@ const Excercise = ({ title, description, id, type, cookieList }: Props) => {
   return (
     <Card style={{ width: "30rem" }}>
       <Card.Body>
-        <h4 className="fw-bold">{title}</h4>
+        <h4 className="fw-bold excercise-title">{title}</h4>
         <p className="excercise-description">{description}</p>
         <div className="d-flex text-center flex-column gap-2">
           <Link href={`/courses/${type}/${id}`} className="excercise-button">

@@ -35,7 +35,7 @@ const SubcategoryPage = async ({ params }: Props) => {
         <h3>Ejercicios {slug}</h3> {/* colocar subcategoria */}
       </div>
 
-      <div className="d-flex gap-5 flex-wrap align-content-around justify-content-evenly ">
+      <div className="d-flex gap-3 flex-wrap align-content-around justify-content-evenly ">
         {subcatProblems.map((problem) => (
           <Excercise
             title={problem.subtitle}
