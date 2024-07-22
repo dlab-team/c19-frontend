@@ -1,5 +1,5 @@
-@import url('https://fonts.cdnfonts.com/css/uni-neue?styles=28643');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url("https://fonts.cdnfonts.com/css/uni-neue?styles=28643");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import-normalize;
 
 :root {
@@ -89,7 +89,7 @@ body {
   overflow-x: hidden;
 }
 
-.body-color{
+.body-color {
   background-color: #eeeeee;
 }
 
@@ -98,7 +98,7 @@ a {
   text-decoration: none;
 }
 
-footer{
+footer {
   padding: 40px 90px;
 }
 
@@ -112,30 +112,30 @@ footer{
   border-radius: 20px;
 }
 
-#bg_excercises_css{
+#bg_excercises_css {
   background: rgb(64, 119, 248);
   color: white;
   border-radius: 20px;
 }
 
-#bg_excercises_html{
+#bg_excercises_html {
   background: rgb(240, 101, 41);
   color: white;
   border-radius: 20px;
 }
 
-                        /* corregir color combinado */
-#color_excercises{
+/* corregir color combinado */
+#color_excercises {
   color: rgb(240, 101, 41);
   border-radius: 20px;
 }
 
-#color_excercises_css{
+#color_excercises_css {
   color: rgb(64, 119, 248);
   border-radius: 20px;
 }
 
-#color_excercises_html{
+#color_excercises_html {
   color: rgb(240, 101, 41);
   border-radius: 20px;
 }
@@ -160,7 +160,7 @@ footer{
   border: solid 2px white;
 }
 
-.contador{
+.contador {
   background-color: white;
   border-radius: 50px;
   border-color: #f06529;
@@ -171,33 +171,33 @@ footer{
   text-align: center;
 }
 
-.container .enunciado-container{
-  overflow-y:scroll;
+.container .enunciado-container {
+  overflow-y: scroll;
   height: 200px;
-  background:#eeeeee;
+  background: #eeeeee;
   border-radius: 20px;
   padding: 20px;
   margin-top: -35px;
 }
 
-.listas-container  { 
- /*  max-height: 250px; */
+.listas-container {
+  /*  max-height: 250px; */
   font-size: 20px;
   /* overflow-y: scroll; */
 }
 
-.lista-ordenada{
+.lista-ordenada {
   width: 50%;
   padding: 10px;
 }
 
-.lista-desordenada{
+.lista-desordenada {
   width: 50%;
   padding: 10px;
 }
 
-.marco{
-  background-color:white;
+.marco {
+  background-color: white;
   border-radius: 20px;
   padding: 30px;
 }
@@ -213,50 +213,51 @@ footer{
   font-weight: bold;
   border: none;
   border-radius: 6px;
-
 }
 .back_button {
-  background-color: #749B28;
+  background-color: #749b28;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   color: white;
-
 }
-.bg-gray{
-  background-color: #D9D9D9;
-  
+.bg-gray {
+  background-color: #d9d9d9;
 }
-.bg-white{
-  background-color: #FFF;
+.bg-white {
+  background-color: #fff;
   width: 97vw;
-min-height:104vh;
-border-radius: 10px;
-
+  border-radius: 10px;
 }
 
-.bg-light-gray{
-background-color: #EBEBEB;
-min-height:110vh;
 
+.bg-white2 {
+  background-color: #fff;
+  width: 96%;
+  height: 90%;
+  border-radius: 10px;
 }
-.subcat{
+
+.bg-light-gray {
+  background-color: #ebebeb;
+  height: 135vh;
+}
+.subcat {
   padding: 5px 0;
 }
-.link-active{
-
+.link-active {
   font-weight: bold;
 }
-.red{
+.red {
   color: red;
 }
-.excercise-list{
+.excercise-list {
   width: 70rem;
 }
 
-.excercise-button{
+.excercise-button {
   text-decoration: none;
-  background-color: #F1662A;
+  background-color: #f1662a;
   width: 100%;
   border: none;
   border-radius: 10px;
@@ -264,26 +265,31 @@ min-height:110vh;
   font-weight: bold;
   padding: 0.3rem;
 }
+.excercise-title{
+  min-height: 60px;
+}
+.excercise-description{
+  min-height: 150px;
+}
 
-.iabubble{
- border: solid 1px;
- border-radius: 10px 0 10px 10px;
+.iabubble {
+  border: solid 1px;
+  border-radius: 10px 0 10px 10px;
   background-repeat: no-repeat;
   min-height: 142px;
   width: 707px;
   padding: 10px;
-
 }
-.border-success{
+.border-success {
   border-color: green;
 }
-.border-failure{
+.border-failure {
   border-color: red;
 }
-.iabubble-message{
+.iabubble-message {
   max-width: 85%;
 }
-.spinner-container{
+.spinner-container {
   width: 707px;
   height: 142px;
   display: flex;
@@ -308,15 +314,11 @@ min-height:110vh;
 }
 
 .instagram:hover {
-  background: #833ab4 ;
+  background: #833ab4;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
   background-clip: text;
   color: rgba(0, 0, 0, 0.4) !important;
-  
 }
-
-
-
 
 @media (prefers-color-scheme: dark) {
   html {

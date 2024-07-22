@@ -21,6 +21,11 @@ const menuItems = [
     title: "html-css",
     key: 3,
   },
+  /*  {
+    path: "/courses/categories/game",
+    title: "juego",
+    key: 3,
+  }, */
 ];
 
 const Sidebar = () => {
@@ -28,7 +33,7 @@ const Sidebar = () => {
     <>
       <div
         className="d-flex flex-column bg-gray p-4 m-5 mx-4 rounded-2 gap-3"
-        style={{ minWidth: "20rem" }}
+        style={{ minWidth: "20rem", minHeight: "110vh" }}
       >
         <h3 className="mb-4 fw-bold">Categorías &gt;</h3>
         <Accordion style={{ minWidth: "16rem" }} defaultActiveKey={["0"]}>

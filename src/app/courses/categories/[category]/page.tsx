@@ -29,7 +29,7 @@ const CategoryPage = ({ params }: Props) => {
         <h3>Todos los Ejercicios {title}</h3>
       </div>
 
-      <div className="d-flex gap-5 flex-wrap align-content-around justify-content-evenly ">
+      <div className="d-flex gap-3 flex-wrap align-content-around justify-content-evenly m-0">
         {problems[params.category].map((problem) => (
           <Excercise
             title={problem.subtitle}
