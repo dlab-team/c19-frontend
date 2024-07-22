@@ -89,6 +89,10 @@ body {
   overflow-x: hidden;
 }
 
+.body-color{
+  background-color: #eeeeee;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -104,56 +108,104 @@ footer{
 
 #bg_excercises {
   background: rgb(240, 101, 41);
-  background: linear-gradient(
-    90deg,
-    rgba(240, 101, 41, 1) 0%,
-    rgba(235, 235, 235, 1) 35%,
-    rgba(41, 101, 241, 1) 100%
-  );
+  color: white;
+  border-radius: 20px;
 }
 
 #bg_excercises_css{
   background: rgb(64, 119, 248);
-  background: linear-gradient(
-    90deg,
-    rgba(235, 235, 235, 1) 1%,
-    rgb(64, 119, 248) 100%
-  );
+  color: white;
+  border-radius: 20px;
 }
 
 #bg_excercises_html{
   background: rgb(240, 101, 41);
-  background: linear-gradient(
-    90deg,
-    rgba(235, 235, 235, 1) 1%,
-    rgb(240, 101, 41) 100%
-  );
+  color: white;
+  border-radius: 20px;
+}
+
+                        /* corregir color combinado */
+#color_excercises{
+  color: rgb(240, 101, 41);
+  border-radius: 20px;
+}
+
+#color_excercises_css{
+  color: rgb(64, 119, 248);
+  border-radius: 20px;
+}
+
+#color_excercises_html{
+  color: rgb(240, 101, 41);
+  border-radius: 20px;
 }
 
 .css_button {
-  background-color: #4077f8;
-  color: black;
-  border-radius: 10px;
+  background-color: #264de4;
+  color: white;
+  border-radius: 20px;
   padding: 10px;
   margin: 3px;
 }
 
 .html_button {
   background-color: #f06529;
-  color: black;
-  border-radius: 10px;
+  color: white;
+  border-radius: 20px;
   padding: 10px;
   margin: 3px;
 }
 
 .button_active {
   border: solid 2px white;
-
 }
+
+.contador{
+  background-color: white;
+  border-radius: 50px;
+  border-color: #f06529;
+  color: #f06529;
+  border-style: solid;
+  padding: 2px;
+  width: 120px;
+  text-align: center;
+}
+
+.container .enunciado-container{
+  overflow-y:scroll;
+  height: 200px;
+  background:#eeeeee;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: -35px;
+}
+
+.listas-container  { 
+ /*  max-height: 250px; */
+  font-size: 20px;
+  /* overflow-y: scroll; */
+}
+
+.lista-ordenada{
+  width: 50%;
+  padding: 10px;
+}
+
+.lista-desordenada{
+  width: 50%;
+  padding: 10px;
+}
+
+.marco{
+  background-color:white;
+  border-radius: 20px;
+  padding: 30px;
+}
+
 .editor_top {
   background-color: black;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .next_button {

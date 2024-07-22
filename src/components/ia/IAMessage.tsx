@@ -4,7 +4,6 @@ import { getPhrase } from "@/helpers/random-phrases";
 import Image from "next/image";
 import React, { useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import Draggable from "react-draggable";
 import { motion } from "react-magic-motion";
 
 interface Props {
@@ -93,16 +92,15 @@ export const IAMessage = ({ response, isLoading }: Props) => {
           </div>
         </>
       )}
-      <Draggable>
-        <Image
-          src={"/iaIcon.png"}
-          alt={"iaIcon"}
-          width={100}
-          height={100}
-          onClick={handleClick}
-          style={{ cursor: "pointer" }}
-        />
-      </Draggable>
+
+      <Image
+        src={"/iaIcon.png"}
+        alt={"iaIcon"}
+        width={100}
+        height={100}
+        onClick={handleClick}
+        style={{ cursor: "pointer" }}
+      />
     </div>
   );
 };
