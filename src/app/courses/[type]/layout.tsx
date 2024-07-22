@@ -13,4 +13,3 @@ export default function ExcerciseLayout({
 }>) {
   return <div className="body-color">{children}</div>;
 }
-

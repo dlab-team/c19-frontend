@@ -8,10 +8,10 @@ const CoursesLayout = ({
 }>) => {
   return (
     <div className="body-color">
-    <div className="d-flex">
-      <Sidebar />
-      {children}
-    </div>
+      <div className="d-flex">
+        <Sidebar />
+        {children}
+      </div>
     </div>
   );
 };

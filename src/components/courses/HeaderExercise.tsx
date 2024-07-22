@@ -1,4 +1,3 @@
-import  subtitle  from "@/problems/problems.json";
 import React from "react";
 import { Container } from "react-bootstrap";
 
@@ -7,7 +6,6 @@ interface Props {
   id: number;
   subtitle: string;
 }
-
 
 export default function HeaderExercise({ lenguaje, id, subtitle }: Props) {
   let color = "";
@@ -19,15 +17,11 @@ export default function HeaderExercise({ lenguaje, id, subtitle }: Props) {
     color = "color_excercises";
   }
   return (
-    <Container
-    className="bg-white d-flex pt-2 justify-content-center align-items-center gap-3"
-    >
-      <h2 className="py-1 fw-bold "
-        id={color}>
-          {subtitle}
+    <Container className="bg-white d-flex pt-2 justify-content-center align-items-center gap-3">
+      <h2 className="py-1 fw-bold " id={color}>
+        {subtitle}
       </h2>
-      <h2 className="contador"> 
-        {id}/20</h2>{" "}
+      <h2 className="contador">{id}/20</h2>{" "}
     </Container>
   );
 }

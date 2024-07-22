@@ -2,7 +2,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Container } from "react-bootstrap";
-import { Discord } from "./Discord";
 
 interface Props {
   actualStep: number;
@@ -46,11 +45,11 @@ export const Advance = ({ actualStep, lenguaje }: Props) => {
             onClick={handlePreviousStep}
             disabled={actualStep <= 1} //si el id es menor o igual a uno entonces el btn, se suspende
           >
-            &#129144;    {/* codigo boton de retroceso (flecha izquierda) */}
+            &#129144; {/* codigo boton de retroceso (flecha izquierda) */}
           </button>
         </div>
         <div className="d-flex justify-content-end px-2 ">
-          <button 
+          <button
             id={color}
             className="bg_excercises px-4 py-2 next_button"
             onClick={HomeButton} //insercion de boton para volver a las categorias iniciales
@@ -64,10 +63,8 @@ export const Advance = ({ actualStep, lenguaje }: Props) => {
             className="bg_excercises px-4 py-2 next_button"
             onClick={handleNextStep}
             disabled={actualStep >= 20} //si el id es mayor o igual a 4 entonces el btn se suspende
-            
           >
             Siguiente &#129146;
-            
           </button>
         </div>
       </Container>

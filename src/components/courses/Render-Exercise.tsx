@@ -28,7 +28,7 @@ export const Render = ({ contenidoHtml, contenidoCss }: Props) => {
         title="Render"
         srcDoc={contenido}
         style={{
-          padding:"10px",
+          padding: "10px",
           borderRadius: "20px",
           height: "100%",
           width: "100%",
