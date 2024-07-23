@@ -14,6 +14,7 @@
     "bootstrap": "^5.3.3",
     "cookies-next": "^4.2.1",
     "cssnano": "^7.0.3",
+    "diff": "^5.2.0",
     "dom-compare": "^0.1.1",
     "jsdom": "^24.1.0",
     "monaco-editor": "^0.48.0",
@@ -29,11 +30,14 @@
     "react-icons": "^5.2.1",
     "react-magic-motion": "^1.1.2",
     "sharp": "^0.33.4",
+    "sweetalert2": "^11.12.3",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@types/css-tree": "^2.3.1",
+    "@types/diff": "^5.2.1",
     "@types/jsdom": "^21.1.7",
+    "@types/postcss-js": "^4.0.4",
     "@types/postcss-safe-parser": "^5.0.4",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -3,7 +3,7 @@ import { setProdListCookie } from "./cookies-client";
 
 export interface Response {
   success: boolean;
-  response: string;
+  response: string[];
 }
 
 const handleTest = async (
@@ -13,6 +13,7 @@ const handleTest = async (
   desiredCSSCode: string,
   excerciseId: number,
 ): Promise<Response> => {
+  let alldifss: string[] = [];
   //Comparar CSS
   if (
     userCSSCode.css1Code.trim().length > 0 &&
@@ -35,16 +36,15 @@ const handleTest = async (
       }
 
       const data = await response.json();
+
       if (!data.success) {
-        return {
-          success: false,
-          response: "no success",
-        };
+        alldifss = [...alldifss, ...data.cssDifss];
       }
     } catch (error) {
       console.error("Error al llamar a la API:", error);
     }
   }
+
   // fin comparar CSS
 
   try {
@@ -60,12 +60,9 @@ const handleTest = async (
     });
 
     const data = await response.json();
-    console.log(data);
+    //console.log(data)
     if (!data.areEqual) {
-      return {
-        success: false,
-        response: data.tips.result,
-      };
+      alldifss = [...alldifss, ...data.diffsMsgs];
     }
   } catch (error) {
     console.log(error);
@@ -78,10 +75,36 @@ const handleTest = async (
     userCSSCode,
   );
 
-  return {
-    success: true,
-    response: "Estas realizando un buen trabajo",
-  };
+  if (alldifss.length === 0) {
+    return {
+      success: true,
+      response: ["Estas realizando un buen trabajo"],
+    };
+  } else {
+    return {
+      success: false,
+      response: alldifss,
+    };
+  }
 };
 
-export { handleTest };
+const handleIA = async (diffsMsgs: string[]) => {
+  try {
+    const response = await fetch("/api/ia", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        diffsMsgs,
+      }),
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { handleTest, handleIA };

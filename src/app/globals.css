@@ -275,12 +275,18 @@ footer {
 .iabubble {
   border: solid 1px;
   border-radius: 10px 0 10px 10px;
-  background-repeat: no-repeat;
+background: #fff;
   min-height: 142px;
   width: 707px;
   padding: 10px;
 }
-.border-success {
+* {
+  user-select: none;
+}
+.close-button:hover{
+  cursor: pointer;
+}
+.border-success{
   border-color: green;
 }
 .border-failure {
@@ -290,11 +296,24 @@ footer {
   max-width: 85%;
 }
 .spinner-container {
-  width: 707px;
-  height: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 /*--------------------Estilos Personalizados del footer-----*/
 .social-link:hover {
