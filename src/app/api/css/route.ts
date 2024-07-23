@@ -59,7 +59,7 @@ export async function POST(req: Request) {
 
 import { NextResponse } from "next/server";
 import postcss from "postcss";
-import postcssJs from "postcss-js";
+import postcssJs, { CssInJs } from "postcss-js";
 import postcssPresetEnv from "postcss-preset-env";
 import cssnano from "cssnano";
 import safeParser from "postcss-safe-parser";
@@ -73,6 +73,7 @@ type JsonArray = JsonValue[];
 
 // Función para procesar CSS con PostCSS y cssnano
 const processCSS = async (css: string): Promise<string> => {
+  const cssInJs: CssInJs = postcss.parse(css);
   const result = await postcss([
     postcssPresetEnv(),
     cssnano({
@@ -84,7 +85,7 @@ const processCSS = async (css: string): Promise<string> => {
         },
       ],
     }),
-  ]).process(css, { parser: safeParser, from: undefined });
+  ]).process(cssInJs, { parser: safeParser, from: undefined });
   const root = result.root;
 
   // Filtrar solo los nodos de tipo 'rule' y ordenarlos por el selector
@@ -131,6 +132,8 @@ export async function POST(req: Request) {
     } else {
       const root1 = postcss.parse(optimizedCSS1);
       const root2 = postcss.parse(optimizedCSS2);
+
+      //convertimos los css minificados en objetos
       const cssObj1 = postcssJs.objectify(root1);
       const cssObj2 = postcssJs.objectify(root2);
 
