@@ -2,22 +2,33 @@
 import React from "react";
 
 interface Props{
-    option: Array<string>
+    ListaOpcion: { id: number; option: string; lista: number; }[],
+    setListaOpcion: React.Dispatch<React.SetStateAction<{
+      id: number;
+      option: string;
+      lista: number;
+  }[]>>
 }
 
-export default function Options ({option}:Props) {
-    function handleDrag(ev:React.DragEvent<HTMLDivElement>){
-        //metodo q establece tipo de dato y valor arrastrado
-        //el dato y el valor que son arrastrado
-        ev.dataTransfer.setData("text",ev.currentTarget.id);
-      }
-    const todoItems = option.map((todo, index) =>
-        <div draggable="true" onDragStart={handleDrag} id={todo} key={`items-${index}`} className="card-options">
-          {todo}
-        </div>
-      );
+export default function Options ({ListaOpcion,setListaOpcion}:Props) {
+
+  const getList = (opciones:{ id: number; option: string; lista: number; }[],list:number) =>{
+    return opciones.filter(item => item.lista === list)
+  }
+  //aqui recibo el evento y el string de la opcion
+  const startDrag = (ev:React.DragEvent<HTMLDivElement>,item:{ id: number; option: string; lista: number; })=>{
+    ev.dataTransfer.setData("optionID",item.id.toString());
+    console.log(item);    
+  }
+
     return(
         <div className="options">
             <center><h3 className="title-card">Opciones</h3></center>
-            {todoItems}</div>);
+            {getList(ListaOpcion,1).map(item=>(
+              <div draggable="true" onDragStart={(ev)=>startDrag(ev,item)} id={item.id.toString()} key={`items-${item.id}`} className="card-options">
+                {item.option}
+              </div>)
+              )}
+        </div>
+      );
 }

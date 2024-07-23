@@ -42,6 +42,12 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+  /*juego colores*/
+  --game-background:#729E2E;
+  --game-components-background:#A5BB83;
+  --game-border-color:#1D9EB4;
+  --game-title-background:#E2A30B;
+  --game-editor-background:#38353F;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -248,75 +254,112 @@ footer{
   position:relative;
   margin-top: -10px;
   border-radius: 10px;
-  background-color: #da650b;
-  border: 2px solid lightskyblue;
+  background-color: var(--game-title-background);
+  border: 2px solid var(--game-border-color);
   color: #000;
   text-wrap: nowrap;
   width: min-content;
   padding: 0 5px;
+  font-family: var(--font-mono);
+  font-size: large;
 }
 .grid-game{
-  background-color: #749B28;
+  background-color: var(--game-background);
   border: 1px solid black;
   border-radius: 25px;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-template-columns: 1fr 2fr 3fr;
   gap: 1/2em;
-  grid-template-rows: minmax(200px);
+  grid-template-rows: 50vh 35vh;
   margin: 30px;
-  min-width: 750px;
+  min-width: var(--max-width);
+  grid-template-areas: 
+  "enunciado enunciado editor"
+  "figura opciones editor"
+  ;
 }
 .enunciado{
-  grid-column: 1/3;
-  grid-row: 1/4;
-  background-color: aquamarine;
+  grid-area: enunciado ;
+  background-color: var(--game-components-background);
   margin: 10px;
-  border-radius: 25px;
+  border-radius: 15px;
   text-align: center;
-  border: 2px solid lightskyblue;
+  border: 2px solid var(--game-border-color);
+  min-height: 300px;
+  font-family: var(--font-mono);
+  font-size:large;
 }
+
 .figura{
-  grid-column: 1/2;
-  grid-row: 4/5;
-  background-color: aquamarine;
+  grid-area: figura;
+  background-color: var(--game-components-background);
   margin: 10px;
-  border-radius: 25px;
-  border: 2px solid lightskyblue;
-}
-.ejercicios{
-  background-color: aqua;
+  border-radius: 15px;
+  border: 2px solid var(--game-border-color);
+  width: min-content + 1em;
 }
 .options{
-  border: 2px solid lightskyblue;
-  grid-column: 2/3;
-  grid-row: 4/5;
+  border: 2px solid var(--game-border-color);
+  grid-area: opciones;
   margin: 10px;
-  border-radius: 25px;
+  border-radius: 15px;
+  background-color: var(--game-components-background);
 }
 .card-options{
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: transparent;
   height: 29px;
+  margin: 2px auto;
+  text-align: center;
+  text-wrap: nowrap;
+  width: min-content;
+  padding: 0 5px;
+  font-family: var(--font-mono);
+}
+.card-options:hover{
+  border: 2px solid var(--game-border-color);
+  cursor: pointer;
+  color: var(--game-border-color)
 }
 .select{
   border: 2px solid black;
   border-radius: 10px;
   background-color: #fff;
-  width: 200px;
-  height: 30px;
+  max-width: 300px;
+  height: 35px;
 }
 .contenedor{
-  grid-column: 3/5;
-  grid-row: 1/5;
+  grid-area: editor ;
   margin: 10px;
-  border-radius: 25px;
-  background-color: #38353f;
-  border: 2px solid lightskyblue;
-  color:#da650b;
+  border-radius: 15px;
+  background-color: var(--game-editor-background);
+  border: 2px solid var(--game-border-color);
+  color: var(--game-title-background);
   text-align: start;
+  font-family: var(--font-mono);
+}
+.editor-content{
+  display: flex;
+  flex-direction: column;
+}
+.game-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
+.game-buttons>button{
+  background-color: var(--bs-blue);
+  color: white;
+  border-radius: 5px;
+  width: min-content;
+  margin: 15px;
+  padding: 5px;
+}
+.editor-content>p:not(:first-child){
+  text-indent: 3em;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
