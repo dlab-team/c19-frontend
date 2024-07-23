@@ -4,12 +4,13 @@ import Excercise from "@/components/courses/Excercise";
 import type { Problems } from "@/interfaces/problems";
 import { getServerCookies } from "@/actions/cookies-server-actions";
 import { notFound } from "next/navigation";
+import { filterExcercisesBySubType } from "@/actions/problems-server-actions";
 
 interface Props {
-  params: { category: string };
+  params: { category: string; subcategory: string };
 }
 
-const CategoryPage = ({ params }: Props) => {
+const SubcategoryPage = async ({ params }: Props) => {
   const cookieList = getServerCookies();
 
   const problems: Problems = htmlCssProblems;
@@ -20,17 +21,22 @@ const CategoryPage = ({ params }: Props) => {
     notFound();
   }
 
+  const subcatProblems = await filterExcercisesBySubType(params.subcategory);
+  const slug = params.subcategory
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
   return (
     <div className="m-5 excercise-list">
       <div className="bg-gray p-3 rounded">
         <h4 className="m-0">{title}</h4>
       </div>
       <div className="p-3">
-        <h3>Todos los Ejercicios {title}</h3>
+        <h3>Ejercicios {slug}</h3> {/* colocar subcategoria */}
       </div>
 
-      <div className="d-flex gap-3 flex-wrap align-content-around justify-content-evenly m-0">
-        {problems[params.category].map((problem) => (
+      <div className="d-flex gap-3 flex-wrap align-content-around justify-content-evenly ">
+        {subcatProblems.map((problem) => (
           <Excercise
             title={problem.subtitle}
             description={problem.descripcion}
@@ -45,4 +51,4 @@ const CategoryPage = ({ params }: Props) => {
   );
 };
 
-export default CategoryPage;
+export default SubcategoryPage;

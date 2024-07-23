@@ -1,14 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import { CodeEditor, Render, IAMessage } from "@/components";
 import {
   getSolvedListCookie,
   setProdListCookie,
 } from "@/actions/cookies-client";
 import type { CssCode, Problem } from "@/interfaces/problems";
-import { handleTest } from "@/actions/problems-client-actions";
-import type { Response } from "@/actions/problems-client-actions";
+import { handleIA, handleTest } from "@/actions/problems-client-actions";
+import Swal from "sweetalert2";
+import type { IAResponse } from "../ia/IAMessage";
 
 interface Props {
   excerciseId: number;
@@ -33,9 +34,14 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     css2Code: "",
   });
   const [HTMLcode, setHTMLCode] = useState("");
-  const [iaRes, setIaRes] = useState<Response>({ success: true, response: "" });
+  const [iaRes, setIaRes] = useState<IAResponse>({
+    success: true,
+    response: "",
+  });
   const [solved, setSolved] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showDiv, setShowDiv] = useState(false);
+  const [diffMsgs, setDiffMsgs] = useState<string[]>([]);
 
   useEffect(() => {
     // Inicializa los estados con los valores de las cookies o con los valores iniciales del problema
@@ -84,6 +90,11 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
   } else {
     color = "bg_excercises";
   }
+  const handleRequestIA = async () => {
+    const res = await handleIA(diffMsgs);
+
+    setIaRes({ success: true, response: res.tips.result });
+  };
 
   const handleClick = async () => {
     setIsLoading(true);
@@ -95,11 +106,31 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
       Number(excerciseId),
     );
 
-    setIaRes(res);
     setIsLoading(false);
     if (res.success) {
+      Swal.fire({
+        title: "Respuesta Correcta",
+        text: "Excelente trabajo",
+        icon: "success",
+        confirmButtonText: "Ok",
+      });
       setSolved(true);
     } else {
+      Swal.fire({
+        title: "Respuesta Incorrecta",
+        text: "Vuelve a intentarlo",
+        icon: "error",
+        confirmButtonText: "Ok",
+      }).then((resp) => {
+        setDiffMsgs(res.response);
+        resp.isConfirmed &&
+          setIaRes({
+            success: false,
+            response: "Deseas solicitar ayuda de la IA?",
+          });
+        setShowDiv(true);
+      });
+
       setSolved(false);
     }
   };
@@ -108,7 +139,7 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
     <>
       <Container
         fluid
-        className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3"
+        className="d-flex justify-content-between  gap-5 flex-column flex-md-row bg-gray rounded p-3 position-relative"
       >
         <div
           style={{
@@ -155,7 +186,24 @@ export const ContainerCodeRender = ({ excerciseId, problem }: Props) => {
           </div>
         </div>
       </Container>
-      <IAMessage response={iaRes} isLoading={isLoading} />
+
+      <IAMessage
+        response={iaRes}
+        showDiv={showDiv}
+        setShowDiv={setShowDiv}
+        handleRequestIA={handleRequestIA}
+      />
+
+      {isLoading && (
+        <div className="loading-overlay">
+          <div className="spinner-container">
+            <Spinner className="p-4" animation="grow" />
+            <h6 className="mt-3">
+              Verificando tu respuesta... espera un momento
+            </h6>
+          </div>
+        </div>
+      )}
     </>
   );
 };
