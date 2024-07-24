@@ -21,11 +21,11 @@ const menuItems = [
     title: "html-css",
     key: 3,
   },
-  /*  {
-    path: "/courses/categories/game",
-    title: "juego",
-    key: 3,
-  }, */
+  {
+    path: "/courses/categories/juegos",
+    title: "juegos",
+    key: 4,
+  },
 ];
 
 const Sidebar = () => {

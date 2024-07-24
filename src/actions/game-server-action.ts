@@ -19,4 +19,17 @@ async function filterGameById(
   return {};
 }
 
-export { filterGameById };
+async function filterGamesBySubType(subType: string): Promise<gameProblem[]> {
+  const slug = subType
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+  const allExercises = Object.values(GameProblems).flat();
+  const filteredExercises = allExercises.filter(
+    (exercise: gameProblem) => exercise.gameSubType === slug,
+  );
+
+  return filteredExercises.length ? filteredExercises : [];
+}
+
+export { filterGameById, filterGamesBySubType };

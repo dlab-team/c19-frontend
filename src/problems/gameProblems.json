@@ -1,9 +1,10 @@
 {
-    "game-css":[
+    "juegos":[
             {
                 "id":13,
-                "titleGame": "Juego",
+                "titleGame": "Juego 1",
                 "gameSubType": "Subcategoria 1",
+                "codeType": "juego",
                 "listOptions" : [{"id":1,"option":"background-color:red;","lista":1},
                 {"id":2,"option":"background-color:red","lista":1},
                 {"id":3,"option":"background-color:yellow;","lista":1},
@@ -19,8 +20,9 @@
             },
             {
                 "id":14,
-                "titleGame": "Juego",
+                "titleGame": "Juego 2",
                 "gameSubType": "Subcategoria 1",
+                "codeType": "juego",
                 "listOptions" : [{"id":1,"option":"background-color:red;","lista":1},
                 {"id":2,"option":"background-color:red","lista":1},
                 {"id":3,"option":"background-color:yellow;","lista":1},
@@ -37,8 +39,9 @@
             },
             {
                 "id":15,
-                "titleGame": "Juego",
+                "titleGame": "Juego 3",
                 "gameSubType": "Subcategoria 2",
+                "codeType": "juego",
                 "listOptions" : [{"id":1,"option":"background-color:blue;","lista":1},
                 {"id":2,"option":"background-color:red","lista":1},
                 {"id":3,"option":"background-color:yellow;","lista":1},

@@ -1,6 +1,8 @@
 interface gameProblem {
   id: number;
   titleGame: string;
+  gameSubType: string;
+  codeType: string;
   listOptions: { id: number; option: string; lista: number }[];
   listCorrect: string[];
   listAyuda: string[];
