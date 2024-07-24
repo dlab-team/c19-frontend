@@ -1,13 +1,13 @@
 "use server";
 import game from "@/problems/gameProblems.json";
-import { gameProblem ,gameProblems } from "@/interfaces/gameProblems";
+import { gameProblem, gameProblems } from "@/interfaces/gameProblems";
 
-const GameProblems: gameProblems=game;
+const GameProblems: gameProblems = game;
 
 async function filterGameById(
-    id: number,
-  ): Promise<gameProblem | Record<string, never>> {
-    const categories = Object.keys(GameProblems);
+  id: number,
+): Promise<gameProblem | Record<string, never>> {
+  const categories = Object.keys(GameProblems);
 
   for (const category of categories) {
     const exercises = GameProblems[category];
@@ -17,6 +17,6 @@ async function filterGameById(
     }
   }
   return {};
-  }
+}
 
-export {filterGameById}
+export { filterGameById };

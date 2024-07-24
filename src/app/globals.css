@@ -43,11 +43,11 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
   /*juego colores*/
-  --game-background:#729E2E;
-  --game-components-background:#A5BB83;
-  --game-border-color:#1D9EB4;
-  --game-title-background:#E2A30B;
-  --game-editor-background:#38353F;
+  --game-background: #729e2e;
+  --game-components-background: #a5bb83;
+  --game-border-color: #1d9eb4;
+  --game-title-background: #e2a30b;
+  --game-editor-background: #38353f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -236,7 +236,6 @@ footer {
   border-radius: 10px;
 }
 
-
 .bg-white2 {
   background-color: #fff;
   width: 96%;
@@ -271,17 +270,17 @@ footer {
   font-weight: bold;
   padding: 0.3rem;
 }
-.excercise-title{
+.excercise-title {
   min-height: 60px;
 }
-.excercise-description{
+.excercise-description {
   min-height: 150px;
 }
 
 .iabubble {
   border: solid 1px;
   border-radius: 10px 0 10px 10px;
-background: #fff;
+  background: #fff;
   min-height: 142px;
   width: 707px;
   padding: 10px;
@@ -289,10 +288,10 @@ background: #fff;
 * {
   user-select: none;
 }
-.close-button:hover{
+.close-button:hover {
   cursor: pointer;
 }
-.border-success{
+.border-success {
   border-color: green;
 }
 .border-failure {
@@ -346,8 +345,8 @@ background: #fff;
 }
 
 /*estilos de game*/
-.title-card{
-  position:relative;
+.title-card {
+  position: relative;
   margin-top: -10px;
   border-radius: 10px;
   background-color: var(--game-title-background);
@@ -359,23 +358,23 @@ background: #fff;
   font-family: var(--font-mono);
   font-size: large;
 }
-.grid-game{
+.grid-game {
   background-color: var(--game-background);
   border: 1px solid black;
   border-radius: 25px;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.758);
   display: grid;
   grid-template-columns: 1fr 2fr 3fr;
   gap: 1/2em;
-  grid-template-rows: 50vh 35vh;
+  grid-template-rows: auto auto;
   margin: 30px;
   min-width: var(--max-width);
-  grid-template-areas: 
-  "enunciado enunciado editor"
-  "figura opciones editor"
-  ;
+  grid-template-areas:
+    "enunciado enunciado editor"
+    "figura opciones editor";
 }
-.enunciado{
-  grid-area: enunciado ;
+.enunciado {
+  grid-area: enunciado;
   background-color: var(--game-components-background);
   margin: 10px;
   border-radius: 15px;
@@ -383,25 +382,31 @@ background: #fff;
   border: 2px solid var(--game-border-color);
   min-height: 300px;
   font-family: var(--font-mono);
-  font-size:large;
+  font-size: large;
 }
-
-.figura{
+.enunciado > p {
+  margin: 20px 20px;
+}
+.figura {
   grid-area: figura;
   background-color: var(--game-components-background);
   margin: 10px;
   border-radius: 15px;
   border: 2px solid var(--game-border-color);
-  width: min-content + 1em;
 }
-.options{
+.options {
   border: 2px solid var(--game-border-color);
   grid-area: opciones;
   margin: 10px;
   border-radius: 15px;
   background-color: var(--game-components-background);
 }
-.card-options{
+.listaopcion {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.card-options {
   border: 2px solid black;
   border-radius: 20px;
   background-color: transparent;
@@ -412,21 +417,23 @@ background: #fff;
   width: min-content;
   padding: 0 5px;
   font-family: var(--font-mono);
+  font-size: small;
 }
-.card-options:hover{
+.card-options:hover {
   border: 2px solid var(--game-border-color);
   cursor: pointer;
-  color: var(--game-border-color)
+  color: var(--game-border-color);
 }
-.select{
+.select {
   border: 2px solid black;
   border-radius: 10px;
   background-color: #fff;
   max-width: 300px;
   height: 35px;
+  padding: 3px;
 }
-.contenedor{
-  grid-area: editor ;
+.contenedor {
+  grid-area: editor;
   margin: 10px;
   border-radius: 15px;
   background-color: var(--game-editor-background);
@@ -435,17 +442,26 @@ background: #fff;
   text-align: start;
   font-family: var(--font-mono);
 }
-.editor-content{
+.div-select {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-left: 3em;
+}
+.editor-content {
   display: flex;
   flex-direction: column;
+  margin: 15px;
+  padding: 15px;
+  font-size: smaller;
 }
-.game-buttons{
+.game-buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.game-buttons>button{
+.game-buttons > button {
   background-color: var(--bs-blue);
   color: white;
   border-radius: 5px;
@@ -453,7 +469,10 @@ background: #fff;
   margin: 15px;
   padding: 5px;
 }
-.editor-content>p:not(:first-child){
+.game-buttons > button:first-child {
+  background-color: transparent;
+}
+.editor-content > p:not(:first-child) {
   text-indent: 3em;
 }
 
