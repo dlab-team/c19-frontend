@@ -1,3 +1,4 @@
+import type { CssCode } from "@/interfaces/problems";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 
 export const getSolvedListCookie = () => {
@@ -15,7 +16,7 @@ export function setProdListCookie(
   solved: boolean,
   solvedTimeStamp?: Date,
   html?: string,
-  css?: string,
+  css?: CssCode,
 ) {
   const cookieSolvedList = getSolvedListCookie();
   if (problemId) {

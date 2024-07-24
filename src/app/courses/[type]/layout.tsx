@@ -11,5 +11,5 @@ export default function ExcerciseLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return <div className="body-color">{children}</div>;
 }

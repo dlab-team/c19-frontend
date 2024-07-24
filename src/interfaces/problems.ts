@@ -1,12 +1,20 @@
 interface Problem {
+  id: number;
+  type: number;
   title: string;
   subtitle: string;
-  enunciado: string;
-  cssCode: string;
-  htmlCode: string;
-  descripcion: string;
-  id: number;
   codeType: string;
+  codeSubType: string;
+  enunciado: string;
+  descripcion: string;
+  cssCode: CssCode;
+  htmlCode: string;
+  desiredHTMLCode: string;
+  desiredCSSCode: string;
+}
+interface CssCode {
+  css1Code: string;
+  css2Code: string;
 }
 
 interface Problems {
@@ -22,4 +30,4 @@ interface ProblemSolved {
   html?: string;
   css?: string;
 }
-export type { Problem, Problems, AdvanceStatus, ProblemSolved };
+export type { Problem, Problems, AdvanceStatus, ProblemSolved, CssCode };
