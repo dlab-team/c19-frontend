@@ -3,9 +3,12 @@ import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
 import htmlCssProblems from "@/problems/problems.json";
+import gamesProblems from "@/problems/gameProblems.json";
 import type { Problems } from "@/interfaces/problems";
+import type { gameProblems } from "@/interfaces/gameProblems";
 
 const problems: Problems = htmlCssProblems;
+const games: gameProblems = gamesProblems;
 
 interface Props {
   path: string;
@@ -14,7 +17,10 @@ interface Props {
 
 const SidebarMenuItem = ({ path, title }: Props) => {
   const actualPath = usePathname();
-  const subCats = problems[title].map((prob) => prob.codeSubType);
+  const subCats =
+    title !== "juegos"
+      ? problems[title].map((prob) => prob.codeSubType)
+      : games[title].map((prob) => prob.gameSubType);
   const subCatSet = new Set(subCats);
   return (
     <>

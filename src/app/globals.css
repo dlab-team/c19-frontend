@@ -42,6 +42,12 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+  /*juego colores*/
+  --game-background: #729e2e;
+  --game-components-background: #a5bb83;
+  --game-border-color: #1d9eb4;
+  --game-title-background: #e2a30b;
+  --game-editor-background: #38353f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -233,7 +239,6 @@ footer {
   border-radius: 10px;
 }
 
-
 .bg-white2 {
   background-color: #fff;
   width: 96%;
@@ -272,10 +277,10 @@ box-shadow: 0px 4px 2px 0px rgba(191,187,191,1);
   font-weight: bold;
   padding: 0.3rem;
 }
-.excercise-title{
+.excercise-title {
   min-height: 60px;
 }
-.excercise-description{
+.excercise-description {
   min-height: 150px;
 }
 
@@ -293,10 +298,10 @@ background: #fff;
 * {
   user-select: none;
 }
-.close-button:hover{
+.close-button:hover {
   cursor: pointer;
 }
-.border-success{
+.border-success {
   border-color: green;
 }
 .border-failure {
@@ -347,6 +352,138 @@ background: #fff;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
   background-clip: text;
   color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/*estilos de game*/
+.title-card {
+  position: relative;
+  margin-top: -10px;
+  border-radius: 10px;
+  background-color: var(--game-title-background);
+  border: 2px solid var(--game-border-color);
+  color: #000;
+  text-wrap: nowrap;
+  width: min-content;
+  padding: 0 5px;
+  font-family: var(--font-mono);
+  font-size: large;
+}
+.grid-game {
+  background-color: var(--game-background);
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.758);
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  gap: 1/2em;
+  grid-template-rows: auto auto;
+  margin: 30px;
+  min-width: var(--max-width);
+  grid-template-areas:
+    "enunciado enunciado editor"
+    "figura opciones editor";
+}
+.enunciado {
+  grid-area: enunciado;
+  background-color: var(--game-components-background);
+  margin: 10px;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid var(--game-border-color);
+  min-height: 300px;
+  font-family: var(--font-mono);
+  font-size: large;
+}
+.enunciado > p {
+  margin: 20px 20px;
+}
+.figura {
+  grid-area: figura;
+  background-color: var(--game-components-background);
+  margin: 10px;
+  border-radius: 15px;
+  border: 2px solid var(--game-border-color);
+}
+.options {
+  border: 2px solid var(--game-border-color);
+  grid-area: opciones;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: var(--game-components-background);
+}
+.listaopcion {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.card-options {
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: transparent;
+  height: 29px;
+  margin: 2px auto;
+  text-align: center;
+  text-wrap: nowrap;
+  width: min-content;
+  padding: 0 5px;
+  font-family: var(--font-mono);
+  font-size: small;
+}
+.card-options:hover {
+  border: 2px solid var(--game-border-color);
+  cursor: pointer;
+  color: var(--game-border-color);
+}
+.select {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  max-width: 300px;
+  height: 35px;
+  padding: 3px;
+}
+.contenedor {
+  grid-area: editor;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: var(--game-editor-background);
+  border: 2px solid var(--game-border-color);
+  color: var(--game-title-background);
+  text-align: start;
+  font-family: var(--font-mono);
+}
+.div-select {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-left: 3em;
+}
+.editor-content {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 15px;
+  font-size: smaller;
+}
+.game-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.game-buttons > button {
+  background-color: var(--bs-blue);
+  color: white;
+  border-radius: 5px;
+  width: min-content;
+  margin: 15px;
+  padding: 5px;
+}
+.game-buttons > button:first-child {
+  background-color: transparent;
+}
+.editor-content > p:not(:first-child) {
+  text-indent: 3em;
 }
 
 @media (prefers-color-scheme: dark) {
