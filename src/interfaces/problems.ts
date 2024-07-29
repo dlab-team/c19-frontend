@@ -1,26 +1,26 @@
 interface Problem {
   id: number;
-  type: number;
   title: string;
   subtitle: string;
   codeType: string;
   codeSubType: string;
   enunciado: string;
   descripcion: string;
-  cssCode: CssCode;
-  htmlCode: string;
-  desiredHTMLCode: string;
-  desiredCSSCode: string;
+  editors: Editor[];
 }
-interface CssCode {
-  css1Code: string;
-  css2Code: string;
-}
-
 interface Problems {
   [key: string]: Problem[];
 }
+interface Editor {
+  type: string;
+  title: string;
+  expectedCode: string;
+  initialCode: string;
+}
 
+interface CssCode {
+  [key: string]: string;
+}
 interface AdvanceStatus {
   [key: number]: ProblemSolved;
 }
@@ -30,4 +30,11 @@ interface ProblemSolved {
   html?: string;
   css?: string;
 }
-export type { Problem, Problems, AdvanceStatus, ProblemSolved, CssCode };
+export type {
+  Problem,
+  Problems,
+  AdvanceStatus,
+  ProblemSolved,
+  Editor,
+  CssCode,
+};

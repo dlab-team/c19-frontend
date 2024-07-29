@@ -1,4 +1,4 @@
-import type { CssCode } from "@/interfaces/problems";
+import { CssCode } from "@/interfaces/problems";
 import { setProdListCookie } from "./cookies-client";
 
 export interface Response {
@@ -10,15 +10,13 @@ const handleTest = async (
   userHTMLCode: string,
   desiredHTMLCode: string,
   userCSSCode: CssCode,
-  desiredCSSCode: string,
+  desiredCSSCode: CssCode,
   excerciseId: number,
 ): Promise<Response> => {
   let alldifss: string[] = [];
   //Comparar CSS
-  if (
-    userCSSCode.css1Code.trim().length > 0 &&
-    desiredCSSCode.trim().length > 0
-  ) {
+
+  if (userCSSCode && desiredCSSCode) {
     try {
       const response = await fetch("/api/css", {
         method: "POST",
@@ -26,8 +24,8 @@ const handleTest = async (
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userCss: userCSSCode.css1Code + userCSSCode.css2Code,
-          desiredCss: desiredCSSCode,
+          userCss: Object.values(userCSSCode).join("\n"),
+          desiredCss: Object.values(desiredCSSCode).join("\n"),
         }),
       });
 

@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 import { Editor } from "@monaco-editor/react";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
@@ -45,7 +45,7 @@ export const CodeEditor = ({
 
   return (
     <Container style={{ width: "100%" }}>
-      {/* TODO bajar este div a otro componente para manejar los clicks  */}
+
       <div className="editor_top">
         <div className="p-1">
           {(codeType === "html" || codeType === "html-css") && (
@@ -142,3 +142,88 @@ export const CodeEditor = ({
     </Container>
   );
 };
+ */
+"use client";
+import { Editor } from "@monaco-editor/react";
+import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
+import { Files } from "./ContainerCodeRender";
+import { Dispatch, SetStateAction } from "react";
+import type { CssCode } from "@/interfaces/problems";
+
+export interface Props {
+  type: string;
+  title: string;
+  files: Files;
+  expectedCode: string;
+  stateCssCode?: CssCode;
+  stateHtmlCode?: string;
+  setHTMLCode: (str: string) => void;
+  setCssCodeS: Dispatch<SetStateAction<CssCode>>;
+}
+
+export const CodeEditor = ({
+  title,
+  files,
+  expectedCode,
+  stateCssCode,
+  stateHtmlCode,
+  setCssCodeS,
+  setHTMLCode,
+}: Props) => {
+  const [fileName, setFileName] = useState<string>(title);
+
+  useEffect(() => {
+    setFileName(title);
+  }, [title, expectedCode]);
+
+  const file = files[fileName];
+  const updateCssCode = (newCode: string, fileName: string) => {
+    setCssCodeS((prevState) => ({
+      ...prevState,
+      [fileName]: newCode,
+    }));
+  };
+  return (
+    <Container style={{ width: "100%" }}>
+      <div className="editor_top">
+        <div className="p-1">
+          {Object.keys(files).map((fileKey, index) => (
+            <button
+              key={index}
+              className={`${fileName === fileKey ? "button_active" : ""} ${
+                files[fileKey].language === "html"
+                  ? "html_button"
+                  : files[fileKey].language === "css"
+                    ? "css_button"
+                    : ""
+              }`}
+              disabled={fileName === fileKey}
+              onClick={() => setFileName(fileKey)}
+            >
+              {files[fileKey].language.toUpperCase()}
+            </button>
+          ))}
+        </div>
+      </div>
+      <Editor
+        height="25rem"
+        width="100%"
+        theme="vs-dark"
+        path={file.name}
+        defaultLanguage={file.language}
+        defaultValue={file.initial}
+        value={
+          file.language === "html" ? stateHtmlCode : stateCssCode?.[fileName]
+        }
+        onChange={(newValue) =>
+          file.language === "html"
+            ? setHTMLCode(newValue || "")
+            : updateCssCode(newValue || "", fileName)
+        }
+      />
+    </Container>
+  );
+};
+
+export default CodeEditor;

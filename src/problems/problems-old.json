@@ -1,0 +1,212 @@
+ {
+        "html": [
+            {
+                "id": 1,
+                "type": 1,
+                "title": "HTML",
+                "subtitle": "Etiquetas",
+                "codeType": "html",
+                "codeSubType": "Subcategoria 1",
+                "enunciado": "Crea un link a www.desafiolatam.com que diga 'Ir a Desafío Latam'.",
+                "descripcion": "Para crear un link a otro sitio se debe usar la etiqueta <a> y el atributo href que indica la dirección a la que se redirigirá al usuario al hacer click en el link.\n Ejemplo: <a href='https://www.google.com'>Ir a Google</a> \n",
+                "cssCode": {
+                    "css1Code": ".rojo{\n    color: red;\n}\n.azul{\n    color: blue;\n}\n.verde{\n    color: green;\n}\n.container{\n    display: flex;\n    justify-content: space-between;\n    padding: 3rem;\n}\n.body{\n    box-sizing: border-box;\n}",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!-- Escribe tu codigo aqui -->",
+                "desiredHTMLCode": "<a href='www.desafiolatam.com'>Ir a Desafío Latam</a>",
+                "desiredCSSCode": ""
+            },
+            {
+                "id": 2,
+                "type": 1,
+                "title": "HTML",
+                "codeType": "html",
+                "codeSubType": "Subcategoria 1",
+                "subtitle": "Colores en CSS",
+                "desiredHTMLCode": "<p style='color: blue'>\n<!-- fin -->\n  Este texto es azul\n</p>",
+                "desiredCSSCode": "",
+                "enunciado": "Crea un archivo HTML que contenga un párrafo con el texto 'Este texto es azul' y que el texto sea de color azul.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!-- Escribe tu código aquí -->\n<p style=''>\n<!-- fin -->\n  Este texto es azul\n</p>",
+                "descripcion": "Para cambiar el color de un texto en CSS se puede usar la propiedad color y asignarle un valor con el nombre del color en inglés o su código hexadecimal. Ejemplo: <p style='color: red'>Este texto es rojo</p>"
+            },
+            {
+                "id": 3,
+                "type": 1,
+                "title": "HTML",
+                "codeType": "html",
+                "codeSubType": "Subcategoria 2",
+                "desiredHTMLCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema 3-->\n <p class='gris'>hola</p>\n</body>\n</html>",
+                "desiredCSSCode": "",
+                "subtitle": "Agregar una propiedad y un valor a un CSS",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema 3-->\n</body>\n</html>",
+                "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+                "id": 4,
+                "type": 1,
+                "title": "HTML",
+                "codeType": "html",
+                "codeSubType": "Subcategoria 2",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Agregar un archivo CSS",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema 4-->\n</body>\n</html>",
+                "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+        ],
+        "css": [
+            {
+                "id": 5,
+                "type": 1,
+                "title": "CSS",
+                "subtitle": "Ejemplo",
+                "codeType": "css",
+                "codeSubType": "Subcategoria 3",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "enunciado": "Para cambiar el color de un texto en CSS se puede usar la propiedad color y asignarle un valor con el nombre del color en inglés o su código hexadecimal. Ejemplo:",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí -->\n  <p style=''>\n  <!-- fin -->\n    Este texto es azul\n  </p>\n</body>\n</html>",
+                "descripcion": "Crea un archivo HTML que contenga un párrafo con el texto 'Este texto es azul' y que el texto sea de color azul."
+            },
+            {
+                "id": 6,
+                "type": 1,
+                "title": "CSS",
+                "codeType": "css",
+                "codeSubType": "Subcategoria 3",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "CSS Ejemplo 2",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema medio 2-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            },
+            {
+                "id": 7,
+                "type": 1,
+                "title": "CSS",
+                "codeType": "css",
+                "codeSubType": "Subcategoria 4",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "CSS Ejemplo 3",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema medio 1-->\n</body>\n</html>",
+                "descripcion": "Este es un problema de nivel medio sobre conceptos básicos de CSS."
+            },
+            {
+                "id": 8,
+                "type": 1,
+                "title": "CSS",
+                "codeType": "css",
+                "codeSubType": "Subcategoria 3",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "CSS Ejemplo 4",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema medio 2-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            }
+        ],
+        "html-css": [
+            {
+                "id": 9,
+                "type": 2,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "codeSubType": "Subcategoria 5",
+                "desiredHTMLCode": "<!-- Archivo 1. index.html -->\n<p class='gris'>Desafio Latam</p>",
+                "desiredCSSCode": ".gris{\n    color: #808080 ;\n}",
+                "subtitle": "Agregar una propiedad y un valor a un CSS",
+                "enunciado": "1- Agrega un párrafo con la clase gris dentro del body del HTML. Debe tener el texto: Desafio Latam. 2.- En el CSS crea la clase 'gris' con la propiedad color con el valor #808080 o 'grey'",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!-- Archivo 1. index.html -->\n",
+                "descripcion": "Para agregar una propiedad y valor a un archivo css existente, podemos hacerlo de la siguiente manera: <br /> /* estilos.css */ body {   background-color: lightblue; }"
+            },
+            {
+                "id": 10,
+                "type": 3,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "codeSubType": "Subcategoria 5",
+                "desiredHTMLCode": "<html><head>\n<!-- Escribe tu código aquí-->\n<link href='div-styles.css' rel='stylesheet' type='text/css'>\n<link href='background-styles.css' rel='stylesheet' type='text/css'>\n</head>\n<body class='grey'>\n  <!-- Escribe tu código aquí-->\n<div class='red'></div>\n<div class='blue'></div>\n</body>\n</html>",
+                "desiredCSSCode": ".red{    width: 100px;    height: 100px;    background-color: red} .blue{width: 100px;height: 100px;background-color: blue;} .grey{background-color: grey;}",
+                "subtitle": "Agregar Archivos CSS",
+                "enunciado": "Instrucciones: Crear un archivo HTML: Nombre del archivo: index.html Contenido del archivo: Estructura básica de HTML con dos divs. Crear dos archivos CSS: div-styles.css: Para especificar el color de los divs. background-styles.css: Para especificar el color de fondo de la página. Vincular las hojas de estilo en el archivo HTML. Resultado Esperado: Al abrir el archivo index.html en un navegador, deberías ver dos divs de 100px por 100px. El primer div debe tener un fondo rojo y el segundo div debe tener un fondo azul. El fondo de toda la página debe ser de color gris claro.",
+                "cssCode": {
+                    "css1Code": "/*div-styles.css*/",
+                    "css2Code": "/*background-styles.css*/"
+                },
+                "htmlCode": "<head>\n<!-- Escribe tu código aquí-->\n\n</head>\n<body>\n  <!-- Escribe tu código aquí-->\n\n</body>\n</html>",
+                "descripcion": "El objetivo de este ejercicio es practicar la separación de responsabilidades en el diseño web utilizando HTML y CSS. Aprenderás a crear dos divs de diferentes colores y a aplicar estilos desde diferentes hojas de estilo para manejar el color de los divs y el color de fondo de la página."
+            },
+            {
+                "id": 11,
+                "type": 3,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "codeSubType": "Subcategoria 6",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Avanzado Ejemplo 3",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema avanzado 1-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            },
+            {
+                "id": 12,
+                "type": 3,
+                "title": "HTML-CSS",
+                "codeType": "html-css",
+                "codeSubType": "Subcategoria 7",
+                "desiredHTMLCode": "",
+                "desiredCSSCode": "",
+                "subtitle": "Avanzado Ejemplo 4",
+                "enunciado": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo dictum venenatis. Integer aliquet fringilla turpis ut mollis. Nulla luctus risus id egestas commodo. Aenean nec aliquet neque. Morbi vitae lorem ac orci efficitur dictum non nec lectus. Aliquam posuere consectetur nibh, eu efficitur nulla. In sit amet nunc sit amet arcu volutpat posuere sit amet sit amet orci. Curabitur rhoncus purus et nisl condimentum malesuada. Aenean quis enim nibh. Donec rutrum ac odio at congue. Phasellus accumsan sed ligula in commodo. Nunc laoreet feugiat dui sed lobortis. Ut sollicitudin dolor eget orci semper accumsan. Maecenas viverra enim tortor, sed efficitur diam aliquet ut.",
+                "cssCode": {
+                    "css1Code": "/* Archivo 2. estilos.css */\n/* Escribe tu codigo aqui ->>*/ \n\n\n/* <--- fin */",
+                    "css2Code": "/*CSS2*/"
+                },
+                "htmlCode": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- Escribe tu código aquí problema avanzado 2-->\n</body>\n</html>",
+                "descripcion": "Este problema medio explora más a fondo las técnicas y propiedades de CSS."
+            }
+        ]
+    }

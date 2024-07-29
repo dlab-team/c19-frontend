@@ -74,6 +74,7 @@ type JsonArray = JsonValue[];
 // Función para procesar CSS con PostCSS y cssnano
 const processCSS = async (css: string): Promise<string> => {
   const cssInJs: CssInJs = postcss.parse(css);
+
   const result = await postcss([
     postcssPresetEnv(),
     cssnano({
@@ -126,7 +127,6 @@ export async function POST(req: Request) {
   try {
     const optimizedCSS1 = await processCSS(userCss);
     const optimizedCSS2 = await processCSS(desiredCss);
-
     if (optimizedCSS1 === optimizedCSS2) {
       return NextResponse.json({ success: true }, { status: 200 });
     } else {
@@ -159,7 +159,7 @@ export async function POST(req: Request) {
         .filter(Boolean); // Filtra los valores undefined o null
 
       //[ "Expected element 'P' instead of 'A'" ]
-      console.log(formattedDifferences);
+
       return NextResponse.json(
         { success: false, cssDifss: formattedDifferences },
         { status: 200 },

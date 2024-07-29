@@ -112,19 +112,19 @@ footer {
   background: #38353f;
 }
 
-#bg_excercises {
+.bg_excercises {
   background: rgb(240, 101, 41);
   color: white;
   border-radius: 20px;
 }
 
-#bg_excercises_css {
+.bg_excercises_css {
   background: rgb(64, 119, 248);
   color: white;
   border-radius: 20px;
 }
 
-#bg_excercises_html {
+.bg_excercises_html {
   background: rgb(240, 101, 41);
   color: white;
   border-radius: 20px;
@@ -217,8 +217,8 @@ footer {
 }
 
 .next_button {
-  color: #000;
-  font-weight: bold;
+
+
   border: none;
   border-radius: 6px;
 }
@@ -242,7 +242,7 @@ footer {
 .bg-white2 {
   background-color: #fff;
   width: 96%;
-  height: 1043px;
+  min-height: 1043px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 4px 2px 0px rgba(191,187,191,1);
 -moz-box-shadow: 0px 4px 2px 0px rgba(191,187,191,1);
@@ -251,7 +251,8 @@ box-shadow: 0px 4px 2px 0px rgba(191,187,191,1);
 
 .bg-light-gray {
   background-color: #ebebeb;
-  height: 1100px;
+  min-height: 1100px;
+  padding: 16px 0;
  
 }
 .subcat {
@@ -265,6 +266,7 @@ box-shadow: 0px 4px 2px 0px rgba(191,187,191,1);
 }
 .excercise-list {
   width: 70rem;
+  flex: grow;
 }
 
 .excercise-button {
