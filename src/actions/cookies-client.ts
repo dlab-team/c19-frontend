@@ -1,4 +1,4 @@
-import type { CssCode } from "@/interfaces/problems";
+import { CssCode } from "@/interfaces/problems";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 
 export const getSolvedListCookie = () => {
