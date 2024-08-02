@@ -27,7 +27,7 @@ const HtmlCssPage = async ({ params }: Props) => {
   }
 
   return (
-    <Container className="mt-5 d-flex flex-column gap-5  ">
+    <Container className="d-flex flex-column gap-5  ">
       <HeaderExercise
         lenguaje={problem.codeType}
         id={params.id}

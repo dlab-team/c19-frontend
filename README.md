@@ -24,6 +24,8 @@ Patricio Barahona / Frontend Dev
 
 Ricardo Andrade / Frontend Dev
 
+Roman Granata / Frontend Dev
+
 ## Getting Started
 
 First, run the development server:
