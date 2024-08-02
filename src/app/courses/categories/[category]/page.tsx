@@ -4,8 +4,9 @@ import Excercise from "@/components/courses/Excercise";
 import type { Problems } from "@/interfaces/problems";
 import { getServerCookies } from "@/actions/cookies-server-actions";
 import { notFound } from "next/navigation";
-import gamesProblems from "@/problems/gameProblems.json";
+import gamesJson from "@/problems/gameProblems.json";
 import { gameProblems } from "@/interfaces/gameProblems";
+import { getRandomNumber } from "@/actions/game-server-action";
 
 interface Props {
   params: { category: string };
@@ -47,10 +48,11 @@ const CategoryPage = ({ params }: Props) => {
       </div>
     );
   } else {
-    const games: gameProblems = gamesProblems;
+    const games: gameProblems = gamesJson;
     if (!games[params.category]) {
       notFound();
     }
+    const num: number = getRandomNumber();
 
     return (
       <div className="m-5 excercise-list">
@@ -66,10 +68,10 @@ const CategoryPage = ({ params }: Props) => {
             <Excercise
               title={problem.titleGame}
               description={problem.enunciadoGame}
-              key={problem.id}
-              id={problem.id}
+              key={problem.titleGame}
+              id={problem.problems[num].id}
               type={problem.codeType}
-              cookieList={cookieList[problem.id]}
+              cookieList={cookieList[problem.problems[num].id]}
             />
           ))}
         </div>

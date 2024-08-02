@@ -23,7 +23,10 @@ export const Advance = ({ actualStep, lenguaje }: Props) => {
 
   //boton para volver al inicio de las categorias de ejercicios
   const HomeButton = () => {
-    router.push(`/courses/categories/${lenguaje}`);
+    if (lenguaje != "juego") {
+      router.push(`/courses/categories/${lenguaje}`);
+    }
+    router.push(`/courses/categories/juegos`);
   };
 
   let color = "";

@@ -66,7 +66,7 @@ const SidebarMenuItem = ({ path, title }: Props) => {
   const subCats =
     title !== "juegos"
       ? problems[title]?.map((prob) => prob.codeSubType)
-      : games[title]?.map((prob) => prob.gameSubType);
+      : games[title]?.map((prob) => prob.titleGame);
 
   const subCatSet = new Set(subCats);
 

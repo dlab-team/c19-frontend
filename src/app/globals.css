@@ -43,8 +43,10 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
   /*juego colores*/
-  --game-background: #729e2e;
-  --game-components-background: #a5bb83;
+  /*--game-background: #729e2e;*/
+  --game-background:#fff;
+  /*--game-components-background: #a5bb83;*/
+  --game-components-background: #eee;
   --game-border-color: #1d9eb4;
   --game-title-background: #e2a30b;
   --game-editor-background: #38353f;
@@ -372,24 +374,35 @@ background: #fff;
 }
 .grid-game {
   background-color: var(--game-background);
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.758);
   display: grid;
-  grid-template-columns: 1fr 2fr 3fr;
+  grid-template-columns: repeat(5,1fr);
   gap: 1/2em;
-  grid-template-rows: auto auto;
+  grid-template-rows: 2fr minmax(100px,auto) minmax(230px,auto);
   margin: 30px;
   min-width: var(--max-width);
   grid-template-areas:
-    "enunciado enunciado editor"
-    "figura opciones editor";
+    " imagen imagen enunciado enunciado enunciado "
+    " imagen imagen . editor editor"
+    "figura opciones opciones editor editor";
+}
+.imagenJuego{
+  grid-area: imagen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imagenJuego > img{
+  object-fit: fill;
+  mask-image: linear-gradient(
+    black 70%,
+    transparent
+  );
 }
 .enunciado {
   grid-area: enunciado;
-  background-color: var(--game-components-background);
+  background-color: var(--game-background);
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 50px;
   text-align: center;
   border: 2px solid var(--game-border-color);
   min-height: 300px;
@@ -404,10 +417,10 @@ background: #fff;
   background-color: var(--game-components-background);
   margin: 10px;
   border-radius: 15px;
-  border: 2px solid var(--game-border-color);
+  border: 2px solid black;
 }
 .options {
-  border: 2px solid var(--game-border-color);
+  border: 2px solid black;
   grid-area: opciones;
   margin: 10px;
   border-radius: 15px;
@@ -443,13 +456,14 @@ background: #fff;
   max-width: 300px;
   height: 35px;
   padding: 3px;
+  text-wrap: nowrap;
 }
 .contenedor {
   grid-area: editor;
   margin: 10px;
   border-radius: 15px;
-  background-color: var(--game-editor-background);
-  border: 2px solid var(--game-border-color);
+  background-color: black;
+  border: 2px solid black;
   color: var(--game-title-background);
   text-align: start;
   font-family: var(--font-mono);
@@ -483,6 +497,7 @@ background: #fff;
 }
 .game-buttons > button:first-child {
   background-color: transparent;
+  border: 2px solid var(--bs-blue);
 }
 .editor-content > p:not(:first-child) {
   text-indent: 3em;
