@@ -1,6 +1,11 @@
 interface gameProblem {
-  id: number;
   titleGame: string;
+  codeType: string;
+  enunciadoGame:string;
+  problems: gameFormas[];
+}
+interface gameFormas {
+  id: number;
   gameSubType: string;
   codeType: string;
   listOptions: { id: number; option: string; lista: number }[];
@@ -12,7 +17,7 @@ interface gameProblem {
   enunciadoGame: string;
 }
 interface gameProblems {
-  [key: string]: gameProblem[];
+  [key:string]: gameProblem[],
 }
 
 interface gameSolved {
@@ -20,4 +25,4 @@ interface gameSolved {
   solvedTimeStamp?: Date;
 }
 
-export type { gameProblem, gameProblems, gameSolved };
+export type { gameProblem, gameProblems, gameFormas, gameSolved };

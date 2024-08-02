@@ -80,7 +80,7 @@ const SubcategoryPage = async ({ params }: Props) => {
         <div className="d-flex gap-3 flex-wrap align-content-around justify-content-evenly ">
           {subcatGames.map((problem) => (
             <Excercise
-              title={problem.titleGame}
+              title={problem.gameSubType}
               description={problem.enunciadoGame}
               key={problem.id}
               id={problem.id}

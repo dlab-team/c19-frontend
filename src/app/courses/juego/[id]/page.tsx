@@ -10,8 +10,8 @@ interface Props {
   params: { id: number };
 }
 
-const GamePage = async ({ params }: Props) => {
-  const problemGame = await filterGameById(Number(params.id));
+const GamePage = async ({params}:Props) => {
+  const problemGame = await filterGameById(params.id);
   if (Object.keys(problemGame).length === 0) {
     notFound();
   }
@@ -32,7 +32,7 @@ const GamePage = async ({ params }: Props) => {
           muestraCodigo={problemGame.codigo}
         />
       </div>
-      <Advance actualStep={Number(params.id)} lenguaje="juegos" />
+      <Advance actualStep={problemGame.id} lenguaje="juego"/>
     </div>
   );
 };

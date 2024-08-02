@@ -83,7 +83,7 @@ export default function Gameselect({
 
     setListaOpcion(newState);
   };
-
+  const iaCorrecto="./ai-correcto.png"
   const handleClick = () => {
     const listaOption: string[] = [];
     ListaSeleccion.forEach((item) => {
@@ -93,14 +93,18 @@ export default function Gameselect({
       Swal.fire({
         title: "Respuesta Correcta",
         text: "Estas haciendo un buen trabajo",
-        icon: "success",
+        imageUrl: "/ai-correcto.png",
+        imageWidth:"14em",
+        imageHeight:"10em",
         confirmButtonText: "Ok",
       });
     } else {
       Swal.fire({
         title: "Respuesta Incorrecta",
         text: "Vuelve a intentarlo",
-        icon: "error",
+        imageUrl: "/ai-error.png",
+        imageWidth:"14em",
+        imageHeight:"10em",
         confirmButtonText: "Ok",
       });
     }
