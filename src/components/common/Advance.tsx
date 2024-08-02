@@ -43,7 +43,7 @@ export const Advance = ({ actualStep, lenguaje }: Props) => {
             className={`${color} bg_excercises px-4 py-2 next_button`}
             onClick={HomeButton} //insercion de boton para volver a las categorias iniciales
           >
-            &#9776; {/* codigo boton de categorias (tres tablas horizontales) */}
+            &#9776;{/* codigo boton de categorias (tres tablas horizontales) */}
             Categorias
           </button>
         </div>
@@ -54,9 +54,9 @@ export const Advance = ({ actualStep, lenguaje }: Props) => {
             className={`${color} bg_excercises px-4 py-2 next_button`}
             onClick={handlePreviousStep}
             disabled={actualStep <= 1} //si el id es menor o igual a uno entonces el btn, se suspende
-          > 
+          >
             &#129144; {/* codigo boton de retroceso (flecha izquierda) */}
-            Volver 
+            Volver
           </button>
         </div>
         <div className="d-flex justify-content-end px-2 ">
@@ -65,8 +65,8 @@ export const Advance = ({ actualStep, lenguaje }: Props) => {
             onClick={handleNextStep}
             disabled={actualStep >= 20} //si el id es mayor o igual a 4 entonces el btn se suspende
           >
-            Siguiente {/* codigo boton de siguiente (flecha derecha) */}
-            &#129146;  
+            Siguiente &#129146;
+            {/* codigo boton de siguiente (flecha derecha) */}
           </button>
         </div>
       </Container>
