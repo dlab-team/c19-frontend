@@ -63,7 +63,7 @@ const SubcategoryPage = async ({ params }: Props) => {
       notFound();
     }
 
-    const subcatGames = await filterGamesBySubType(params.subcategory);
+    const subcatGames = await filterGamesBySubType();
     const slug = params.subcategory
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))

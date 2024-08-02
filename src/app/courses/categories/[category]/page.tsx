@@ -52,7 +52,7 @@ const CategoryPage = ({ params }: Props) => {
     if (!games[params.category]) {
       notFound();
     }
-    const num:number = getRandomNumber()
+    const num: number = getRandomNumber();
 
     return (
       <div className="m-5 excercise-list">

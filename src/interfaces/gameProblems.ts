@@ -1,7 +1,7 @@
 interface gameProblem {
   titleGame: string;
   codeType: string;
-  enunciadoGame:string;
+  enunciadoGame: string;
   problems: gameFormas[];
 }
 interface gameFormas {
@@ -17,7 +17,7 @@ interface gameFormas {
   enunciadoGame: string;
 }
 interface gameProblems {
-  [key:string]: gameProblem[],
+  [key: string]: gameProblem[];
 }
 
 interface gameSolved {

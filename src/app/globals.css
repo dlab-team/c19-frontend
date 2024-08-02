@@ -374,9 +374,6 @@ background: #fff;
 }
 .grid-game {
   background-color: var(--game-background);
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.758);
   display: grid;
   grid-template-columns: repeat(5,1fr);
   gap: 1/2em;
@@ -400,8 +397,6 @@ background: #fff;
     black 70%,
     transparent
   );
-  width: 400px;
-  height: 300px;
 }
 .enunciado {
   grid-area: enunciado;

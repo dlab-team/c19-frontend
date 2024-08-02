@@ -83,7 +83,7 @@ export default function Gameselect({
 
     setListaOpcion(newState);
   };
-  const iaCorrecto="./ai-correcto.png"
+
   const handleClick = () => {
     const listaOption: string[] = [];
     ListaSeleccion.forEach((item) => {
@@ -94,8 +94,8 @@ export default function Gameselect({
         title: "<h3 style=color:green><b>Respuesta Correcta</b></h3>",
         text: "Estas haciendo un buen trabajo",
         imageUrl: "/ai-correcto.png",
-        imageWidth:"14em",
-        imageHeight:"10em",
+        imageWidth: "14em",
+        imageHeight: "10em",
         confirmButtonText: "Ok",
       });
     } else {
@@ -103,8 +103,8 @@ export default function Gameselect({
         title: "<h3 style=color:red><b>Respuesta Incorrecta</b></h3>",
         text: "Vuelve a intentarlo",
         imageUrl: "/ai-error.png",
-        imageWidth:"14em",
-        imageHeight:"10em",
+        imageWidth: "14em",
+        imageHeight: "10em",
         confirmButtonText: "Ok",
       });
     }
