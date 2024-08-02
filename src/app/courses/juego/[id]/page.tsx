@@ -20,6 +20,9 @@ const GamePage = async ({params}:Props) => {
     <div>
       <div className="grid-game">
         <EnunciadoGame enunciado={problemGame.enunciadoGame} />
+        <div className="imagenJuego">
+          <img src="/ai-normal.png" alt="robot copmentando enunciado" />
+        </div>
         <FiguraGame
           figuraCss={problemGame.figuraCss}
           figuraHtml={problemGame.figuraHtml}

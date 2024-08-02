@@ -91,7 +91,7 @@ export default function Gameselect({
     });
     if (listaOption.every((item, index) => item === correctOption[index])) {
       Swal.fire({
-        title: "Respuesta Correcta",
+        title: "<h3 style=color:green><b>Respuesta Correcta</b></h3>",
         text: "Estas haciendo un buen trabajo",
         imageUrl: "/ai-correcto.png",
         imageWidth:"14em",
@@ -100,7 +100,7 @@ export default function Gameselect({
       });
     } else {
       Swal.fire({
-        title: "Respuesta Incorrecta",
+        title: "<h3 style=color:red><b>Respuesta Incorrecta</b></h3>",
         text: "Vuelve a intentarlo",
         imageUrl: "/ai-error.png",
         imageWidth:"14em",
@@ -157,7 +157,7 @@ export default function Gameselect({
 
           <div className="game-buttons">
             <button onClick={handleClickReset}>
-              <FaRedo style={{ transform: "scaleX(-1)" }} />
+              <FaRedo style={{ transform: "scale(1,-1) rotate(257deg)" }} />
             </button>
             <button onClick={handleClick}>Ejecutar</button>
           </div>
